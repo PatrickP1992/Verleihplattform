@@ -8,14 +8,14 @@
         tools:context=".VerleihGegenstand">
 
     <AutoCompleteTextView
-            android:text="@string/VerleihGegenstandTextView"
-            android:layout_width="248dp"
-            android:layout_height="132dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:id="@+id/VerleihGegenstandTextView"
-            app:layout_constraintHorizontal_bias="0.496"
-            app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="100dp"
-            android:textSize="40sp"/>
+        android:id="@+id/VerleihGegenstandTextView"
+        android:layout_width="248dp"
+        android:layout_height="68dp"
+        android:layout_marginTop="100dp"
+        android:text="@string/VerleihGegenstandTextView"
+        android:textSize="40sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

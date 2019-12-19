@@ -19,5 +19,7 @@
     <string name="editText_VGegenstandAdresse">Adresse und Hausnr.</string>
     <string name="editText_VGegenstandPLZ">PLZ</string>
     <string name="VGegenstandOrtAutoTextView">Ort</string>
+    <string name="textView_AngebotErstellt">Das Angebot wurde erstellt!</string>
+    <string name="button_AngebotErstelltHome">zurück zu Home</string>
 
 </resources>

@@ -1,5 +1,7 @@
 package at.patrick.petzmann.verleihplattform;
 
+import android.content.Intent;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,5 +21,11 @@ public class VerleihDienstleistungActivity extends AppCompatActivity {
         AutoCompleteTextView editText = findViewById(R.id.VerleihDienstleistungTextView);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, DIENSTL);
         editText.setAdapter(adapter);
+    }
+    public void angebotErstellt(View view)
+    {
+        Intent intent = new Intent(this, AngebotErstelltActivity.class);
+
+        startActivity(intent);
     }
 }

@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
         EditText passwort = findViewById(R.id.editText_Passswort);
 
         startActivity(intent);
-        //Hallo
+        //Hallo EMI was here
 
         /*
         if (benutzername.getText().toString().equals("patrick") && passwort.getText().toString().equals("test"))

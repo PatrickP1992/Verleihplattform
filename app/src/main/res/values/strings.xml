@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Verleihplattform</string>
+    <string name="editText_Benutzernamme">Benutzername</string>
+    <string name="editText_Passwort">Passwort</string>
+    <string name="button_Login">Login</string>
+    <string name="button_Ausleihen">Ausleihen</string>
+    <string name="button_Verleihen">Verleihen</string>
+    <string name="button_Dienstleistung">Service</string>
+    <string name="button_Gegenstand">Gegenstand</string>
+</resources>

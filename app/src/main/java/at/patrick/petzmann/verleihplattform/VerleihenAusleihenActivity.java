@@ -24,9 +24,6 @@ public class VerleihenAusleihenActivity extends AppCompatActivity {
     }
 
 
-
-
-
     public void verleihen(View view)
     {
         Intent intent = new Intent(this, VerleihenActivity.class);

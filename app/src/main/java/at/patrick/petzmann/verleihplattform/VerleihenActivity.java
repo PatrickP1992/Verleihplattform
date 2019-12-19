@@ -18,4 +18,9 @@ public class VerleihenActivity extends AppCompatActivity {
         Intent intent = new Intent(this, VerleihGegenstand.class);
         startActivity(intent);
     }
+
+    public void VDienstleistung(View view){
+        Intent intent = new Intent(this, VerleihDienstleistung.class);
+        startActivity(intent);
+    }
 }

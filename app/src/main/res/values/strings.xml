@@ -10,5 +10,7 @@
     <string name="VerleihGegenstandTextView">Gegenstand</string>
     <string name="VerleihDienstleistungTextView">Dienstleistung</string>
     <string name="button_submitDienstleistung">weiter</string>
+    <string name="AusleihGegenstandTextView">Gegenstand</string>
+    <string name="AusleihDienstleistungTextView">Dienstleistung</string>
 
 </resources>

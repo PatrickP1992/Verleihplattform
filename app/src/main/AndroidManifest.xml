@@ -12,7 +12,26 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".VerleihDienstleistungActivity"
+        <activity android:name=".AusleihenDienstleistungActivity"
+            android:parentActivityName=".AusleihenActivity">
+
+            <!-- The meta-data tag is required if you support API level 15 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".AusleihenActivity" />
+            >
+        </activity>
+        <activity android:name=".AusleihenGegenstandActivity"
+            android:parentActivityName=".AusleihenActivity">
+
+            <!-- The meta-data tag is required if you support API level 15 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".AusleihenActivity" />
+            >
+        </activity>
+        <activity
+            android:name=".VerleihDienstleistungActivity"
             android:parentActivityName=".VerleihenActivity">
 
             <!-- The meta-data tag is required if you support API level 15 and lower -->
@@ -21,7 +40,8 @@
                 android:value=".VerleihenActivity" />
             >
         </activity>
-        <activity android:name=".VerleihGegenstand"
+        <activity
+            android:name=".VerleihGegenstand"
             android:parentActivityName=".VerleihenActivity">
 
             <!-- The meta-data tag is required if you support API level 15 and lower -->

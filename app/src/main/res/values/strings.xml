@@ -10,5 +10,10 @@
     <string name="VerleihGegenstandTextView">Gegenstand</string>
     <string name="VerleihDienstleistungTextView">Dienstleistung</string>
     <string name="button_submitDienstleistung">weiter</string>
+    <string name="editText_AdresseVDienst">Adresse und Hausnr.</string>
+    <string name="editText_PLZVDienst">PLZ</string>
+    <string name="VDienstOrtAutoTextView">Ort</string>
+    <string name="editText_VDienstDatumVon">Zeitraum von</string>
+    <string name="editText_VDienstDatumBis">bis</string>
 
 </resources>

@@ -6,4 +6,20 @@
     android:layout_height="match_parent"
     tools:context=".VerleihDienstleistungActivity">
 
+    <AutoCompleteTextView
+            android:text="@string/VerleihDienstleistungTextView"
+            android:layout_width="248dp"
+            android:layout_height="132dp"
+            android:id="@+id/VerleihDienstleistungTextView"
+            app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="100dp"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            android:textSize="36sp"/>
+    <Button
+            android:text="@string/button_submitDienstleistung"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/button_submitDienstleistung"
+            app:layout_constraintBottom_toBottomOf="parent" android:layout_marginBottom="150dp"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.749"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

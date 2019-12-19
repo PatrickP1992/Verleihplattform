@@ -9,5 +9,6 @@
     <string name="button_Gegenstand">Gegenstand</string>
     <string name="VerleihGegenstandTextView">Gegenstand</string>
     <string name="VerleihDienstleistungTextView">Dienstleistung</string>
+    <string name="button_submitDienstleistung">weiter</string>
 
 </resources>

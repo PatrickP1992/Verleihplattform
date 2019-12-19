@@ -7,7 +7,7 @@
                                                    tools:context=".VerleihDienstleistungActivity">
 
     <AutoCompleteTextView
-            android:text="@string/VerleihDienstleistungTextView"
+            android:hint="@string/VerleihDienstleistungTextView"
             android:layout_width="250dp"
             android:layout_height="100dp"
             android:id="@+id/VerleihDienstleistungTextView"
@@ -31,7 +31,7 @@
             app:layout_constraintTop_toBottomOf="@+id/VerleihDienstleistungTextView"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            android:text="@string/editText_AdresseVDienst" android:layout_marginEnd="80dp"
+            android:hint="@string/editText_AdresseVDienst" android:layout_marginEnd="80dp"
             app:layout_constraintHorizontal_bias="1.0" android:textSize="23sp"/>
     <EditText
             android:layout_width="80dp"
@@ -40,11 +40,11 @@
             android:ems="10"
             android:id="@+id/editText_PLZVDienst"
             app:layout_constraintTop_toBottomOf="@+id/editText_AdresseVDienst" android:layout_marginTop="30dp"
-            app:layout_constraintStart_toStartOf="parent" android:text="@string/editText_PLZVDienst"
+            app:layout_constraintStart_toStartOf="parent" android:hint="@string/editText_PLZVDienst"
             app:layout_constraintEnd_toStartOf="@+id/VDienstOrtAutoTextView"
             app:layout_constraintHorizontal_bias="0.794" android:textSize="23sp"/>
     <AutoCompleteTextView
-            android:text="@string/VDienstOrtAutoTextView"
+            android:hint="@string/VDienstOrtAutoTextView"
             android:layout_width="150dp"
             android:layout_height="50dp"
             android:id="@+id/VDienstOrtAutoTextView" android:layout_marginTop="30dp"
@@ -59,7 +59,7 @@
             app:layout_constraintTop_toBottomOf="@+id/VDienstOrtAutoTextView" android:layout_marginTop="30dp"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginEnd="80dp" app:layout_constraintHorizontal_bias="1.0"
-            android:text="@string/editText_VDienstDatumVon" android:textSize="23sp"/>
+            android:hint="@string/editText_VDienstDatumVon" android:textSize="23sp"/>
     <EditText
             android:layout_width="250dp"
             android:layout_height="wrap_content"
@@ -69,5 +69,5 @@
             app:layout_constraintTop_toBottomOf="@+id/editText_VDienstDatumVon" android:layout_marginTop="30dp"
             app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="80dp"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="1.0"
-            android:text="@string/editText_VDienstDatumBis" android:textSize="23sp"/>
+            android:hint="@string/editText_VDienstDatumBis" android:textSize="23sp"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

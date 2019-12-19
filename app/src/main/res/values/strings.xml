@@ -15,5 +15,9 @@
     <string name="VDienstOrtAutoTextView">Ort</string>
     <string name="editText_VDienstDatumVon">Zeitraum von</string>
     <string name="editText_VDienstDatumBis">bis</string>
+    <string name="AusleihGegenstandTextView">Gegenstand</string>
+    <string name="editText_VGegenstandAdresse">Adresse und Hausnr.</string>
+    <string name="editText_VGegenstandPLZ">PLZ</string>
+    <string name="VGegenstandOrtAutoTextView">Ort</string>
 
 </resources>

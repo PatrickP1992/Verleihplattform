@@ -4,4 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AusleihenDienstleistungActivity"/>
+    tools:context=".AusleihenDienstleistungActivity">
+
+    <AutoCompleteTextView
+        android:id="@+id/ausleihenDienstleistungTextView"
+        android:layout_width="276dp"
+        android:layout_height="71dp"
+        android:layout_marginTop="16dp"
+        android:text=""
+        android:textSize="40sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

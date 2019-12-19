@@ -14,13 +14,15 @@ public class VerleihenActivity extends AppCompatActivity {
         setContentView(R.layout.activity_verleihen);
     }
 
-    public void VGegenstand(View view){
+    public void vGegenstand(View view){
         Intent intent = new Intent(this, VerleihGegenstand.class);
         startActivity(intent);
     }
 
-    public void VDienstleistung(View view){
-        Intent intent = new Intent(this, VerleihDienstleistung.class);
-        startActivity(intent);
+
+
+    public void vDienstleistung(View view){
+        Intent intent2 = new Intent(this, VerleihDienstleistungActivity.class);
+        startActivity(intent2);
     }
 }

@@ -1,9 +1,10 @@
 package at.patrick.petzmann.verleihplattform;
 
 import androidx.appcompat.app.AppCompatActivity;
+
 import android.os.Bundle;
 
-public class VerleihDienstleistung extends AppCompatActivity {
+public class VerleihDienstleistungActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

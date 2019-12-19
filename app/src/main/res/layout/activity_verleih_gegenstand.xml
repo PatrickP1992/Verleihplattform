@@ -8,27 +8,14 @@
         tools:context=".VerleihGegenstand">
 
     <AutoCompleteTextView
-            android:hint="Select an Item"
-            android:completionThreshold="1"
-            android:completionHint="Select an Item"
-            android:layout_width="263dp"
-            android:layout_height="69dp"
-            android:id="@+id/VerleihGegenstandTextView"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="156dp"/>
-
-    <TextView
-            android:text="Items"
-            android:textSize="20sp"
-            android:paddingBottom="16dp"
-            android:layout_height="47dp"
-            android:layout_width="263dp"
-            android:id="@+id/text_view_items"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="108dp"/>
-
+        android:id="@+id/VerleihGegenstandTextView"
+        android:layout_width="248dp"
+        android:layout_height="68dp"
+        android:layout_marginTop="100dp"
+        android:text="@string/VerleihGegenstandTextView"
+        android:textSize="40sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

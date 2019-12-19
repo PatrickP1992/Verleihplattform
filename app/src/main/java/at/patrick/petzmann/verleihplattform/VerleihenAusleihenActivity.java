@@ -22,7 +22,7 @@ public class VerleihenAusleihenActivity extends AppCompatActivity {
 
         startActivity(intent);
     }
-    //kommentar
+    //kommentar1
 
 
     public void verleihen(View view)

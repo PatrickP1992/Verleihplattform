@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 
-public class Verleihsystem implements Serializable{
+public class Verleihsystem{
 
     public static Verleihsystem verleihsystem;
     //--Variablen-----------------------------------------------------------------------------------
@@ -45,7 +45,7 @@ public class Verleihsystem implements Serializable{
      * @param bisDatum
      * @param kategorie Kategorie des Items
      */
-    public void createItem(User owner, String name, String adresse, String plz, String ort, Date vonDatum, Date bisDatum, Kategorie kategorie)
+    public boolean createItem(User owner, String name, String adresse, String plz, String ort, Date vonDatum, Date bisDatum, Kategorie kategorie)
     {
         Item item = itemFactory.createItem(owner,name,adresse,plz,ort,vonDatum,bisDatum,kategorie);
 
@@ -55,10 +55,11 @@ public class Verleihsystem implements Serializable{
             for (Gegenstand g:gegenstaende) {
                 if(g.getId()==item.getId())
                 {
-                    return; // Wenn schon vorhanden
+                    return false; // Wenn schon vorhanden
                 }
-                gegenstaende.add((Gegenstand)item);
             }
+            gegenstaende.add((Gegenstand)item);
+            return true;
         }
 
         // Wen Dienstleistung
@@ -68,12 +69,14 @@ public class Verleihsystem implements Serializable{
             {
                 if (d.getId()== item.getId())
                 {
-                    return;
+                    return false;
                 }
-                dienstleistungen.add((Dienstleistung)item);
             }
+            dienstleistungen.add((Dienstleistung)item);
+            return true;
         }
 
+        return false;
     }
 
     /**

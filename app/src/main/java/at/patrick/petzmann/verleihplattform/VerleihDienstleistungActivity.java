@@ -7,8 +7,17 @@ import android.widget.AutoCompleteTextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.widget.TextView;
+
+import java.util.Date;
+
+import at.patrick.petzmann.verleihplattform.Klassen.Kategorie;
+import at.patrick.petzmann.verleihplattform.Klassen.Verleihsystem;
 
 public class VerleihDienstleistungActivity extends AppCompatActivity {
+
+    public Verleihsystem verleihsystem = Verleihsystem.getVerleihsystem();
+
     private static final String[] DIENSTL = new String[]{
             "Haare schneiden","Rasen mähen","Garten umgraben","Fenster putzen","Grundreinigung für Gebäude"
     };
@@ -25,7 +34,27 @@ public class VerleihDienstleistungActivity extends AppCompatActivity {
     public void angebotErstellt(View view)
     {
         Intent intent = new Intent(this, AngebotErstelltActivity.class);
+        TextView nameTextView = findViewById(R.id.VerleihDienstleistungTextView);
+        TextView adresseTextView = findViewById(R.id.editText_AdresseVDienst);
+        TextView plzTextView = findViewById(R.id.editText_PLZVDienst);
+        TextView ortTextView = findViewById(R.id.VDienstOrtAutoTextView);
+        TextView vonDatumTextView = findViewById(R.id.editText_VDienstDatumVon);
+        TextView bisDatumTextView = findViewById(R.id.editText_VDienstDatumBis);
 
-        startActivity(intent);
+        String name = nameTextView.getText().toString();
+        String adresse = adresseTextView.getText().toString();
+        String plz = plzTextView.getText().toString();
+        String ort = ortTextView.getText().toString();
+
+        // Braucht noch eine Methode die eine String in Date umwandelt
+        Date vonDatum = new Date();
+        Date bisDatum = new Date();
+
+        if (verleihsystem.createItem(verleihsystem.getActiveUser(),name,adresse,plz,ort,vonDatum,bisDatum, Kategorie.DIENSTLEISTUNG))
+        {
+            startActivity(intent);
+        }
+
+
     }
 }

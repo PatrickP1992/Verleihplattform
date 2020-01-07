@@ -50,8 +50,11 @@ public class VerleihDienstleistungActivity extends AppCompatActivity {
         Date vonDatum = new Date();
         Date bisDatum = new Date();
 
+        intent.putExtra("name", name);
+
         if (verleihsystem.createItem(verleihsystem.getActiveUser(),name,adresse,plz,ort,vonDatum,bisDatum, Kategorie.DIENSTLEISTUNG))
         {
+            Verleihsystem.setVerleihsystem(verleihsystem); // verleihsystem wird gespeichert
             startActivity(intent);
         }
 

@@ -84,7 +84,10 @@ public class MainActivity extends AppCompatActivity {
 
         ItemFactory itemFactory = new ItemFactory();
 
-        Verleihsystem.setVerleihsystem(new Verleihsystem(users,gegenstaende,dienstleistungen,itemFactory));
+        if (Verleihsystem.getVerleihsystem()==null)
+        {
+            Verleihsystem.setVerleihsystem(new Verleihsystem(users,gegenstaende,dienstleistungen,itemFactory));
+        }
 
         verleihsystem = Verleihsystem.getVerleihsystem();
     }

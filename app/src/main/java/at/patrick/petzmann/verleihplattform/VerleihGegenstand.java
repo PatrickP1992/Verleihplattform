@@ -6,8 +6,18 @@ import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.TextView;
+
+import java.util.Date;
+
+import at.patrick.petzmann.verleihplattform.Klassen.Kategorie;
+import at.patrick.petzmann.verleihplattform.Klassen.Verleihsystem;
 
 public class VerleihGegenstand extends AppCompatActivity {
+
+    public Verleihsystem verleihsystem = Verleihsystem.getVerleihsystem();
+
+
     private static final String[] ITEMS = new String[]{
             "Fahrrad","Mixer","Rasenmäher","Kettensäge","Staubsauger"
     };
@@ -25,7 +35,32 @@ public class VerleihGegenstand extends AppCompatActivity {
     public void angebotErstellt(View view)
     {
         Intent intent = new Intent(this, AngebotErstelltActivity.class);
+        TextView nameTextView = findViewById(R.id.VerleihGegenstandTextView);
+        TextView adresseTextView = findViewById(R.id.editText_VGegenstandAdresse);
+        TextView plzTextView = findViewById(R.id.editText_VGegenstandPLZ);
+        TextView ortTextView = findViewById(R.id.autoCompleteTextView);
+        TextView vonDatumTextView = findViewById(R.id.editText_VGegenstandDatumVon);
+        TextView bisDatumTextView = findViewById(R.id.editText_VGegenstandDatumBis);
 
-        startActivity(intent);
+        String name = nameTextView.getText().toString();
+        String adresse = adresseTextView.getText().toString();
+        String plz = plzTextView.getText().toString();
+        String ort = ortTextView.getText().toString();
+
+        // Braucht noch eine Methode die eine String in Date umwandelt
+        Date vonDatum = new Date();
+        Date bisDatum = new Date();
+        //----------------------------
+
+
+        intent.putExtra("name", name);
+
+        if (verleihsystem.createItem(verleihsystem.getActiveUser(),name,adresse,plz,ort,vonDatum,bisDatum, Kategorie.GEGENSTAND))
+        {
+            Verleihsystem.setVerleihsystem(verleihsystem); // verleihsystem wird gespeichert
+            startActivity(intent);
+        }
+
+
     }
 }

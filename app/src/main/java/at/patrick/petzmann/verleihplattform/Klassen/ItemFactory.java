@@ -5,6 +5,19 @@ import java.util.Date;
 public class ItemFactory {
     private static int id = 0;
 
+
+    /**
+     * Erstellt ein Item und vergibt automatisch eine ID
+     * @param owner
+     * @param name
+     * @param adresse
+     * @param plz
+     * @param ort
+     * @param vonDatum
+     * @param bisDatum
+     * @param kategorie
+     * @return
+     */
     public Item createItem(User owner, String name, String adresse, String plz, String ort, Date vonDatum, Date bisDatum, Kategorie kategorie)
     {
         Item item = null;

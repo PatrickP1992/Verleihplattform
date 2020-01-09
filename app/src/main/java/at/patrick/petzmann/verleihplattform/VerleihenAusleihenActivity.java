@@ -22,22 +22,24 @@ public class VerleihenAusleihenActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * wechselt zu AusleihenActivity
+     * @param view
+     */
     public void ausleihen(View view)
     {
         Intent intent = new Intent(this, AusleihenActivity.class);
-
-        //Toast message = Toast.makeText(getApplicationContext(),verleihsystem.getActiveUser().getUserName(), Toast.LENGTH_SHORT);
-        //message.show();
-
         startActivity(intent);
     }
 
 
-
+    /**
+     * wechselt zu VerleihenActivity
+     * @param view
+     */
     public void verleihen(View view)
     {
         Intent intent = new Intent(this, VerleihenActivity.class);
-
         startActivity(intent);
     }
 }

@@ -32,6 +32,10 @@ public class VerleihDienstleistungActivity extends AppCompatActivity {
         editText.setAdapter(adapter);
     }
 
+    /**
+     * Erstellt ein Angebot
+     * @param view
+     */
     public void angebotErstellt(View view)
     {
         Intent intent = new Intent(this, AngebotErstelltActivity.class);

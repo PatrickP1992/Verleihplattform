@@ -6,4 +6,120 @@
     android:layout_height="match_parent"
     tools:context=".WillAusleihenActivity">
 
+
+    <TextView
+        android:id="@+id/textViewWillAusleihenOrt"
+        android:layout_width="104dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="124dp"
+        android:layout_marginEnd="16dp"
+        android:completionHint="Select an Item"
+        android:completionThreshold="1"
+        android:text="@string/VDienstOrtAutoTextView"
+        android:gravity="center"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.763"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewWillAusleihenName" />
+
+    <TextView
+        android:id="@+id/textViewWillAusleihenName"
+        android:layout_width="250dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="16dp"
+        android:completionHint="Select an Item"
+        android:completionThreshold="1"
+        android:editable="false"
+        android:gravity="center"
+        android:text="Name"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/TextViewWillAusleihenAdresse"
+        android:layout_width="250dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="16dp"
+        android:completionHint="Select an Item"
+        android:completionThreshold="1"
+        android:gravity="center"
+        android:text="@string/editText_AdresseVDienst"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewWillAusleihenName" />
+
+    <TextView
+        android:id="@+id/textViewWillAusleihenVon"
+        android:layout_width="250dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="208dp"
+        android:layout_marginEnd="16dp"
+        android:completionHint="Select an Item"
+        android:completionThreshold="1"
+        android:text="@string/editText_VDienstDatumVon"
+        android:gravity="center"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewWillAusleihenName" />
+
+    <TextView
+        android:id="@+id/textViewWillAusleihenBis"
+        android:layout_width="250dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="304dp"
+        android:layout_marginEnd="16dp"
+        android:completionHint="Select an Item"
+        android:completionThreshold="1"
+        android:text="@string/editText_VDienstDatumBis"
+        android:textSize="30sp"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewWillAusleihenName" />
+
+    <TextView
+        android:id="@+id/textViewWillAusleihenPlz"
+        android:layout_width="104dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="124dp"
+        android:layout_marginEnd="16dp"
+        android:completionHint="Select an Item"
+        android:completionThreshold="1"
+        android:gravity="center"
+        android:text="@string/editText_PLZVDienst"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.232"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewWillAusleihenName" />
+
+    <Button
+        android:id="@+id/buttonWillAusleihen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="560dp"
+        android:layout_marginEnd="16dp"
+        android:text="ausleihen"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.776"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

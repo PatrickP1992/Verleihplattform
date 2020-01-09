@@ -85,6 +85,26 @@ public class Verleihsystem{
     }
 
     /**
+     * gibt das Item mit der id zurück
+     * @param id
+     * @return
+     */
+    public Item returnItemById(int id)
+    {
+        for (Gegenstand g:gegenstaende)
+        {
+            if (g.getId()==id)
+                return g;
+        }
+        for (Dienstleistung d:dienstleistungen)
+        {
+            if (d.getId()==id)
+                return d;
+        }
+        return null;
+    }
+
+    /**
      * Gibt das Item mit der id aus der entsprechenden Kategorie zurück
      * @param id
      * @param kategorie

@@ -42,6 +42,7 @@ public class AusleihenDienstleistungActivity extends AppCompatActivity {
                 Intent myIntent = new Intent(AusleihenDienstleistungActivity.this,WillAusleihenActivity.class);
                 int[]ids = verleihsystem.getFilterReturnItemId();
                 myIntent.putExtra("itemId", ids[position]);
+                Verleihsystem.setVerleihsystem(verleihsystem); // verleihsystem wird gespeichert
                 startActivity(myIntent);
             }
         });

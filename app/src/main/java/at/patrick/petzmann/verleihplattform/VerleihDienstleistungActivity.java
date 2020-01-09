@@ -31,6 +31,7 @@ public class VerleihDienstleistungActivity extends AppCompatActivity {
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, DIENSTL);
         editText.setAdapter(adapter);
     }
+
     public void angebotErstellt(View view)
     {
         Intent intent = new Intent(this, AngebotErstelltActivity.class);

@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
+import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
@@ -19,7 +20,7 @@ public class VerleihGegenstand extends AppCompatActivity {
 
 
     private static final String[] ITEMS = new String[]{
-            "Fahrrad","Mixer","Rasenmäher","Kettensäge","Staubsauger"
+            "Fahrrad", "Mixer", "Rasenmäher", "Kettensäge", "Staubsauger"
     };
 
     @Override
@@ -32,8 +33,7 @@ public class VerleihGegenstand extends AppCompatActivity {
         editText.setAdapter(adapter);//
     }
 
-    public void angebotErstellt(View view)
-    {
+    public void angebotErstellt(View view) {
         Intent intent = new Intent(this, AngebotErstelltActivity.class);
         TextView nameTextView = findViewById(R.id.VerleihGegenstandTextView);
         TextView adresseTextView = findViewById(R.id.editText_VGegenstandAdresse);
@@ -55,10 +55,15 @@ public class VerleihGegenstand extends AppCompatActivity {
 
         intent.putExtra("name", name);
 
-        if (verleihsystem.createItem(verleihsystem.getActiveUser(),name,adresse,plz,ort,vonDatum,bisDatum, Kategorie.GEGENSTAND))
-        {
-            Verleihsystem.setVerleihsystem(verleihsystem); // verleihsystem wird gespeichert
-            startActivity(intent);
+        if (!name.isEmpty() && !adresse.isEmpty() && !plz.isEmpty() && !ort.isEmpty() && !vonDatum.equals(null) && !bisDatum.equals(null)) {
+            if (verleihsystem.createItem(verleihsystem.getActiveUser(), name, adresse, plz, ort, vonDatum, bisDatum, Kategorie.GEGENSTAND)) {
+                Verleihsystem.setVerleihsystem(verleihsystem); // verleihsystem wird gespeichert
+                startActivity(intent);
+            }
+        } else {
+            Toast message = Toast.makeText(getApplicationContext(), "Bitte alle Daten eingeben!", Toast.LENGTH_SHORT);
+
+            message.show();
         }
 
 

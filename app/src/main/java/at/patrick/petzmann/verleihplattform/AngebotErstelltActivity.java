@@ -18,15 +18,13 @@ public class AngebotErstelltActivity extends AppCompatActivity {
 
         TextView erstellt = findViewById(R.id.textView_AngebotErstellt);
 
-        if(b!=null)
-        {
-            String name =(String) b.get("name");
-            erstellt.setText("Das Angebot zu "+name+" wurde erstellt");
+        if (b != null) {
+            String name = (String) b.get("name");
+            erstellt.setText("Das Angebot zu " + name + " wurde erstellt");
         }
     }
 
-    public void backToHome(View view)
-    {
+    public void backToHome(View view) {
         Intent intent = new Intent(this, VerleihenAusleihenActivity.class);
 
         startActivity(intent);

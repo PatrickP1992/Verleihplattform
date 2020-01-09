@@ -12,10 +12,12 @@ import android.widget.Toast;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Date;
 
 import at.patrick.petzmann.verleihplattform.Klassen.Dienstleistung;
 import at.patrick.petzmann.verleihplattform.Klassen.Gegenstand;
 import at.patrick.petzmann.verleihplattform.Klassen.ItemFactory;
+import at.patrick.petzmann.verleihplattform.Klassen.Kategorie;
 import at.patrick.petzmann.verleihplattform.Klassen.ObjectSerializer;
 import at.patrick.petzmann.verleihplattform.Klassen.User;
 import at.patrick.petzmann.verleihplattform.Klassen.Verleihsystem;
@@ -80,6 +82,7 @@ public class MainActivity extends AppCompatActivity {
         users.add(christian);
 
         ArrayList<Dienstleistung> dienstleistungen = new ArrayList<>();
+
         ArrayList<Gegenstand> gegenstaende = new ArrayList<>();
 
         ItemFactory itemFactory = new ItemFactory();
@@ -90,5 +93,35 @@ public class MainActivity extends AppCompatActivity {
         }
 
         verleihsystem = Verleihsystem.getVerleihsystem();
+
+        //----Dienstleistungen hinzufügen----------------------------------------------------------------------
+        verleihsystem.createItem(patrick,"Name","Adresse","plz","Ort",new Date(),new Date(), Kategorie.DIENSTLEISTUNG);
+        verleihsystem.createItem(patrick,"Name","Adresse","plz","Ort",new Date(),new Date(), Kategorie.DIENSTLEISTUNG);
+        verleihsystem.createItem(patrick,"Name","Adresse","plz","Ort",new Date(),new Date(), Kategorie.DIENSTLEISTUNG);
+        verleihsystem.createItem(patrick,"Name","Adresse","plz","Ort",new Date(),new Date(), Kategorie.DIENSTLEISTUNG);
+        verleihsystem.createItem(patrick,"Name","Adresse","plz","Ort",new Date(),new Date(), Kategorie.DIENSTLEISTUNG);
+        verleihsystem.createItem(patrick,"Name","Adresse","plz","Ort",new Date(),new Date(), Kategorie.DIENSTLEISTUNG);
+        verleihsystem.createItem(patrick,"Name","Adresse","plz","Ort",new Date(),new Date(), Kategorie.DIENSTLEISTUNG);
+        verleihsystem.createItem(patrick,"Name","Adresse","plz","Ort",new Date(),new Date(), Kategorie.DIENSTLEISTUNG);
+        verleihsystem.createItem(patrick,"Name","Adresse","plz","Ort",new Date(),new Date(), Kategorie.DIENSTLEISTUNG);
+        verleihsystem.createItem(patrick,"Name","Adresse","plz","Ort",new Date(),new Date(), Kategorie.DIENSTLEISTUNG);
+        verleihsystem.createItem(patrick,"Name","Adresse","plz","Ort",new Date(),new Date(), Kategorie.DIENSTLEISTUNG);
+        verleihsystem.createItem(patrick,"Name","Adresse","plz","Ort",new Date(),new Date(), Kategorie.DIENSTLEISTUNG);
+
+
+        //----Gegenstände hinzufügen----------------------------------------------------------------------------
+        verleihsystem.createItem(patrick,"Name","Adresse","plz","Ort",new Date(),new Date(), Kategorie.GEGENSTAND);
+        verleihsystem.createItem(patrick,"Name","Adresse","plz","Ort",new Date(),new Date(), Kategorie.GEGENSTAND);
+        verleihsystem.createItem(patrick,"Name","Adresse","plz","Ort",new Date(),new Date(), Kategorie.GEGENSTAND);
+        verleihsystem.createItem(patrick,"Name","Adresse","plz","Ort",new Date(),new Date(), Kategorie.GEGENSTAND);
+        verleihsystem.createItem(patrick,"Name","Adresse","plz","Ort",new Date(),new Date(), Kategorie.GEGENSTAND);
+        verleihsystem.createItem(patrick,"Name","Adresse","plz","Ort",new Date(),new Date(), Kategorie.GEGENSTAND);
+        verleihsystem.createItem(patrick,"Name","Adresse","plz","Ort",new Date(),new Date(), Kategorie.GEGENSTAND);
+        verleihsystem.createItem(patrick,"Name","Adresse","plz","Ort",new Date(),new Date(), Kategorie.GEGENSTAND);
+        verleihsystem.createItem(patrick,"Name","Adresse","plz","Ort",new Date(),new Date(), Kategorie.GEGENSTAND);
+        verleihsystem.createItem(patrick,"Name","Adresse","plz","Ort",new Date(),new Date(), Kategorie.GEGENSTAND);
+        verleihsystem.createItem(patrick,"Name","Adresse","plz","Ort",new Date(),new Date(), Kategorie.GEGENSTAND);
+
+
     }
 }

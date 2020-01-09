@@ -1,6 +1,7 @@
 package at.patrick.petzmann.verleihplattform.Klassen;
 
-import java.io.Serializable;
+import android.widget.TextView;
+
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -11,6 +12,10 @@ public class Verleihsystem{
     private ArrayList<User> users;
     private ArrayList<Gegenstand> gegenstaende;
     private ArrayList<Dienstleistung> dienstleistungen;
+
+    private String[] filterReturnNames;
+    private int[] filterReturnPictureRes;
+    private int[] filterReturnItemId;
 
     private User activeUser = null;
 
@@ -132,8 +137,44 @@ public class Verleihsystem{
         return false;
     }
 
+    /**
+     *
+     * @param filterText
+     * @param kategorie
+     */
+    public void setCurrentFilter(TextView filterText,User user, Kategorie kategorie)
+    {
+        int i = 0;
+        if(kategorie.equals(Kategorie.DIENSTLEISTUNG))
+        {
+            filterReturnNames = new String[dienstleistungen.size()];
+            filterReturnPictureRes = new int[dienstleistungen.size()];
+            filterReturnItemId = new int[dienstleistungen.size()];
 
+            for (Dienstleistung d: dienstleistungen) 
+            {
+                filterReturnItemId[i] = d.getId();
+                filterReturnNames[i] = d.getName();
+                filterReturnPictureRes[i] = d.getImageRessource();
+                i++;
+            }
+        }
 
+        if(kategorie.equals(Kategorie.GEGENSTAND))
+        {
+            filterReturnNames = new String[gegenstaende.size()];
+            filterReturnPictureRes = new int[gegenstaende.size()];
+            filterReturnItemId = new int[gegenstaende.size()];
+
+            for (Gegenstand g: gegenstaende)
+            {
+                filterReturnItemId[i] = g.getId();
+                filterReturnNames[i] = g.getName();
+                filterReturnPictureRes[i] = g.getImageRessource();
+                i++;
+            }
+        }
+    }
 
     //--Konstruktor---------------------------------------------------------------------------------
     public Verleihsystem(ArrayList<User> users, ArrayList<Gegenstand> gegenstaende, ArrayList<Dienstleistung> dienstleistungen, ItemFactory itemFactory) {
@@ -190,5 +231,17 @@ public class Verleihsystem{
 
     public static Verleihsystem getVerleihsystem() {
         return verleihsystem;
+    }
+
+    public String[] getFilterReturnNames() {
+        return filterReturnNames;
+    }
+
+    public int[] getFilterReturnPictureRes() {
+        return filterReturnPictureRes;
+    }
+
+    public int[] getFilterReturnItemId() {
+        return filterReturnItemId;
     }
 }

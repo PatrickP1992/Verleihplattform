@@ -2,6 +2,8 @@ package at.patrick.petzmann.verleihplattform.Klassen;
 
 import java.util.Date;
 
+import at.patrick.petzmann.verleihplattform.R;
+
 public abstract class Item {
 
     //--Variablen------------------------------------------------------
@@ -22,6 +24,8 @@ public abstract class Item {
 
     private boolean verliehen;
 
+    private int imageRessource;
+
 
     // --Konstruktor----------------------------------------------------
     public Item(User owner, int id, String name, String adresse, String plz, String ort, Date vonDatum, Date bisDatum, Kategorie kategorie) {
@@ -35,6 +39,7 @@ public abstract class Item {
         this.bisDatum = bisDatum;
         this.verliehen = false;
         this.kategorie = kategorie;
+        imageRessource = R.drawable.ic_launcher_foreground; // Standart Bild
     }
 
     //--Getter und Setter----------------------------------------------
@@ -112,5 +117,13 @@ public abstract class Item {
 
     public User getOwner() {
         return owner;
+    }
+
+    public int getImageRessource() {
+        return imageRessource;
+    }
+
+    public void setImageRessource(int imageRessource) {
+        this.imageRessource = imageRessource;
     }
 }

@@ -14,13 +14,20 @@ public class AusleihenActivity extends AppCompatActivity {
         setContentView(R.layout.activity_ausleihen);
     }
 
+    /**
+     * Wechselt zu AusleihenGegenstandActivity
+     * @param view
+     */
     public void aGegenstand(View view){
         Intent intent = new Intent(this, AusleihenGegenstandActivity.class);
         startActivity(intent);
     }
 
 
-
+    /**
+     * Wechselt zu AusleihenDienstleistungActivity
+     * @param view
+     */
     public void aDienstleistung(View view){
         Intent intent2 = new Intent(this, AusleihenDienstleistungActivity.class);
         startActivity(intent2);

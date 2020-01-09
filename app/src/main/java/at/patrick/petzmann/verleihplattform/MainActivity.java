@@ -24,14 +24,12 @@ import at.patrick.petzmann.verleihplattform.Klassen.Verleihsystem;
 
 public class MainActivity extends AppCompatActivity {
 
-
+    // Variable für Verleihsystem wird angelegt
     public Verleihsystem verleihsystem;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-
 
         demoMode();
     }
@@ -44,9 +42,6 @@ public class MainActivity extends AppCompatActivity {
     public void login(View view)
     {
         Intent intent = new Intent(this, VerleihenAusleihenActivity.class);
-
-
-
 
         EditText benutzernameEditText = findViewById(R.id.editText_Benutzername);
         EditText passwortEditText = findViewById(R.id.editText_Passswort);
@@ -62,12 +57,14 @@ public class MainActivity extends AppCompatActivity {
         else
         {
             Toast message = Toast.makeText(getApplicationContext(),"Benutzername oder Passwort falsch!", Toast.LENGTH_SHORT);
-
             message.show();
         }
     }
 
 
+    /**
+     * Erstellt ein Verleihsystem mit vordefinierten Daten
+     */
     public void demoMode()
     {
         User patrick   = new User(0,  "Patrick",   "1234");

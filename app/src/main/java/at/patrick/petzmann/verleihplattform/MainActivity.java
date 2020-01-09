@@ -95,7 +95,7 @@ public class MainActivity extends AppCompatActivity {
         verleihsystem = Verleihsystem.getVerleihsystem();
 
         //----Dienstleistungen hinzufügen----------------------------------------------------------------------
-        verleihsystem.createItem(patrick,"Nachhilfe","UNI","9020","Klagenfurt",new Date(),new Date(), Kategorie.DIENSTLEISTUNG);
+        verleihsystem.createItem(patrick,"Nachhilfe in Mathe","UNI","9020","Klagenfurt",new Date(),new Date(), Kategorie.DIENSTLEISTUNG);
         verleihsystem.createItem(patrick,"Name","Adresse","plz","Ort",new Date(),new Date(), Kategorie.DIENSTLEISTUNG);
         verleihsystem.createItem(patrick,"Name","Adresse","plz","Ort",new Date(),new Date(), Kategorie.DIENSTLEISTUNG);
         verleihsystem.createItem(patrick,"Name","Adresse","plz","Ort",new Date(),new Date(), Kategorie.DIENSTLEISTUNG);

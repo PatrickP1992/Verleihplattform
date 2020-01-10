@@ -17,6 +17,7 @@ import java.text.ParseException;
 import java.util.Date;
 
 import at.patrick.petzmann.verleihplattform.Klassen.Kategorie;
+import at.patrick.petzmann.verleihplattform.Klassen.Methods;
 import at.patrick.petzmann.verleihplattform.Klassen.Verleihsystem;
 
 public class VerleihDienstleistungActivity extends AppCompatActivity {
@@ -58,22 +59,19 @@ public class VerleihDienstleistungActivity extends AppCompatActivity {
         String ort = ortTextView.getText().toString();
 
         // Braucht noch eine Methode die eine String in Date umwandelt
-        SimpleDateFormat formatter = new SimpleDateFormat("dd.MMM.Xyyyy");
+
 
         Date vonDatum = new Date();
         Date bisDatum = new Date();
         boolean dateIsTrue = true;
-//Funktioniert noch nicht richtig-----------------------------------------------------------------------------------------
-        /*try {
-            vonDatum = formatter.parse(vonDatumTextView.toString());
-            bisDatum = formatter.parse(bisDatumTextView.toString());
-            dateIsTrue = true;
-        } catch (ParseException e) {
-            dateIsTrue = false;
-            Toast message = Toast.makeText(getApplicationContext(), "Korrektes Datumsformat zB. 01.01.2020 eingeben!", Toast.LENGTH_SHORT);
-            message.show();
-        }*/
+//falsche Datumseingabe Funktioniert noch nicht richtig-----------------------------------------------------------------------------------------
 
+        try {
+            vonDatum = Methods.toDateFormat(vonDatumTextView.getText().toString());
+            bisDatum = Methods.toDateFormat(bisDatumTextView.getText().toString());
+        } catch (ParseException e){
+            dateIsTrue=false;
+        }
 
         intent.putExtra("name", name);
         if (!name.isEmpty() && !adresse.isEmpty() && !plz.isEmpty() && !ort.isEmpty() && dateIsTrue) {
@@ -81,6 +79,9 @@ public class VerleihDienstleistungActivity extends AppCompatActivity {
                 Verleihsystem.setVerleihsystem(verleihsystem); // verleihsystem wird gespeichert
                 startActivity(intent);
             }
+        } else if (!dateIsTrue) {
+            Toast message = Toast.makeText(getApplicationContext(), "Korrektes Datumsformat zB. 01.01.2020 eingeben!", Toast.LENGTH_SHORT);
+            message.show();
         } else {
             Toast message = Toast.makeText(getApplicationContext(), "Bitte alle Daten eingeben!", Toast.LENGTH_SHORT);
             message.show();

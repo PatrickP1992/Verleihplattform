@@ -35,17 +35,21 @@ public class VerleihenAusleihenActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        Intent intent;
         switch(item.getItemId()){
             case R.id.myaccount:
-                Toast.makeText(this, "Account ausgewählt", Toast.LENGTH_SHORT).show();
+                intent = new Intent(this, MyAccountActivity.class);
+                startActivity(intent);
                 return true;
 
             case R.id.messages:
-                Toast.makeText(this, "Nachrichten ausgewählt", Toast.LENGTH_SHORT).show();
+                intent = new Intent(this, NachrichtenActivity.class);
+                startActivity(intent);
                 return true;
 
             case R.id.AGB:
-                Toast.makeText(this, "AGBs ausgewählt", Toast.LENGTH_SHORT).show();
+                intent = new Intent(this, AGBsActivity.class);
+                startActivity(intent);
                 return true;
 
             default:  return super.onOptionsItemSelected(item);

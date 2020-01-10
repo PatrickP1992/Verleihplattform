@@ -1,15 +1,19 @@
 package at.patrick.petzmann.verleihplattform;
 
 import android.content.Intent;
+import android.icu.text.SimpleDateFormat;
+import android.os.Build;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Toast;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.widget.TextView;
 
+import java.text.ParseException;
 import java.util.Date;
 
 import at.patrick.petzmann.verleihplattform.Klassen.Kategorie;
@@ -38,6 +42,7 @@ public class VerleihDienstleistungActivity extends AppCompatActivity {
      *
      * @param view
      */
+    @RequiresApi(api = Build.VERSION_CODES.N)
     public void angebotErstellt(View view) {
         Intent intent = new Intent(this, AngebotErstelltActivity.class);
         TextView nameTextView = findViewById(R.id.VerleihDienstleistungTextView);
@@ -53,17 +58,31 @@ public class VerleihDienstleistungActivity extends AppCompatActivity {
         String ort = ortTextView.getText().toString();
 
         // Braucht noch eine Methode die eine String in Date umwandelt
+        SimpleDateFormat formatter = new SimpleDateFormat("dd.MMM.Xyyyy");
+
         Date vonDatum = new Date();
         Date bisDatum = new Date();
+        boolean dateIsTrue = true;
+//Funktioniert noch nicht richtig-----------------------------------------------------------------------------------------
+        /*try {
+            vonDatum = formatter.parse(vonDatumTextView.toString());
+            bisDatum = formatter.parse(bisDatumTextView.toString());
+            dateIsTrue = true;
+        } catch (ParseException e) {
+            dateIsTrue = false;
+            Toast message = Toast.makeText(getApplicationContext(), "Korrektes Datumsformat zB. 01.01.2020 eingeben!", Toast.LENGTH_SHORT);
+            message.show();
+        }*/
+
 
         intent.putExtra("name", name);
-        if (!name.isEmpty() && !adresse.isEmpty() && !plz.isEmpty() && !ort.isEmpty() && vonDatum != null && bisDatum != null) {
+        if (!name.isEmpty() && !adresse.isEmpty() && !plz.isEmpty() && !ort.isEmpty() && dateIsTrue) {
             if (verleihsystem.createItem(verleihsystem.getActiveUser(), name, adresse, plz, ort, vonDatum, bisDatum, Kategorie.DIENSTLEISTUNG)) {
                 Verleihsystem.setVerleihsystem(verleihsystem); // verleihsystem wird gespeichert
                 startActivity(intent);
             }
-        }else {
-            Toast message = Toast.makeText(getApplicationContext(),"Bitte alle Daten eingeben!", Toast.LENGTH_SHORT);
+        } else {
+            Toast message = Toast.makeText(getApplicationContext(), "Bitte alle Daten eingeben!", Toast.LENGTH_SHORT);
             message.show();
         }
 

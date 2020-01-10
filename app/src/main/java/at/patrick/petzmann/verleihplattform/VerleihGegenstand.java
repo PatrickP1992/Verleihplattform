@@ -57,7 +57,11 @@ public class VerleihGegenstand extends AppCompatActivity {
         String plz = plzTextView.getText().toString();
         String ort = ortTextView.getText().toString();
 
-        // Braucht noch eine Methode die eine String in Date umwandelt
+        /**
+         * Wenn alle Eingaben passen, speichert das Programm das Angebot
+         * Abfragen nach Datum und ob Textfelder leer sind
+         */
+
         String vonDatumString = vonDatumTextView.getText().toString();
         String bisDatumString = bisDatumTextView.getText().toString();
 

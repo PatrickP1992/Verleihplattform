@@ -1,5 +1,9 @@
 package at.patrick.petzmann.verleihplattform;
 
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
@@ -58,6 +62,27 @@ public class MainActivity extends AppCompatActivity {
         {
             Toast message = Toast.makeText(getApplicationContext(),"Benutzername oder Passwort falsch!", Toast.LENGTH_SHORT);
             message.show();
+        }
+    }
+
+    /**
+     * Erstellt ein Menü und arbeitet damit
+     */
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.registermenu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch(item.getItemId()){
+            case R.id.register:
+                Toast.makeText(this, "Account registrieren ausgewählt", Toast.LENGTH_SHORT).show();
+                return true;
+
+            default:  return super.onOptionsItemSelected(item);
         }
     }
 

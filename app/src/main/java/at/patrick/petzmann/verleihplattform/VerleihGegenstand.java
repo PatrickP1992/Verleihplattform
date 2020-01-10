@@ -58,24 +58,35 @@ public class VerleihGegenstand extends AppCompatActivity {
         String ort = ortTextView.getText().toString();
 
         // Braucht noch eine Methode die eine String in Date umwandelt
+        String vonDatumString = vonDatumTextView.getText().toString();
+        String bisDatumString = bisDatumTextView.getText().toString();
+
         Date vonDatum = new Date();
         Date bisDatum = new Date();
-        boolean dateIsTrue = true;
 
-        try {
-            vonDatum = Methods.toDateFormat(vonDatumTextView.getText().toString());
-            bisDatum = Methods.toDateFormat(bisDatumTextView.getText().toString());
-        } catch (ParseException e){
-            dateIsTrue=false;
-        }
+        boolean dateIsTrue;
 
+        if (Methods.matches(vonDatumString) && Methods.matches(bisDatumString)) {
+            dateIsTrue = true;
+            try {
+                vonDatum = Methods.toDateFormat(vonDatumString);
+                bisDatum = Methods.toDateFormat(bisDatumString);
+            } catch (ParseException e) {
+                dateIsTrue = false;
+            }
+        } else dateIsTrue = false;
+
+        boolean rightDate = (vonDatum.getTime() >= Methods.dateToday().getTime() && vonDatum.getTime() < bisDatum.getTime());
 
         intent.putExtra("name", name);
-        if (!name.isEmpty() && !adresse.isEmpty() && !plz.isEmpty() && !ort.isEmpty() && dateIsTrue) {
+        if (!name.isEmpty() && !adresse.isEmpty() && !plz.isEmpty() && !ort.isEmpty() && dateIsTrue && rightDate) {
             if (verleihsystem.createItem(verleihsystem.getActiveUser(), name, adresse, plz, ort, vonDatum, bisDatum, Kategorie.GEGENSTAND)) {
                 Verleihsystem.setVerleihsystem(verleihsystem); // verleihsystem wird gespeichert
                 startActivity(intent);
             }
+        } else if (!rightDate) {
+            Toast message = Toast.makeText(getApplicationContext(), "Korrektes Datum eingeben!", Toast.LENGTH_SHORT);
+            message.show();
         } else if (!dateIsTrue) {
             Toast message = Toast.makeText(getApplicationContext(), "Korrektes Datumsformat zB. 01.01.2020 eingeben!", Toast.LENGTH_SHORT);
             message.show();

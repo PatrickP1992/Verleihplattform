@@ -12,11 +12,13 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity android:name=".NachrichtenActivity">
+        <activity android:name=".Menüklassen.impressumActivity">
         </activity>
-        <activity android:name=".AGBsActivity">
+        <activity android:name=".Menüklassen.NachrichtenActivity">
         </activity>
-        <activity android:name=".MyAccountActivity">
+        <activity android:name=".Menüklassen.AGBsActivity">
+        </activity>
+        <activity android:name=".Menüklassen.MyAccountActivity">
         </activity>
         <activity android:name=".WillAusleihenActivity"/>
         <activity android:name=".AngebotErstelltActivity"/>

@@ -66,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * Erstellt ein Menü und arbeitet damit
+     * Verlinkt das Registrieren Menü und arbeitet damit
      */
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

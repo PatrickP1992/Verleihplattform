@@ -6,10 +6,14 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import at.patrick.petzmann.verleihplattform.Klassen.Verleihsystem;
+import at.patrick.petzmann.verleihplattform.Menüklassen.AGBsActivity;
+import at.patrick.petzmann.verleihplattform.Menüklassen.MyAccountActivity;
+import at.patrick.petzmann.verleihplattform.Menüklassen.NachrichtenActivity;
+import at.patrick.petzmann.verleihplattform.Menüklassen.impressumActivity;
+
 public class VerleihenAusleihenActivity extends AppCompatActivity {
 
     public Verleihsystem verleihsystem = Verleihsystem.getVerleihsystem();
@@ -21,7 +25,7 @@ public class VerleihenAusleihenActivity extends AppCompatActivity {
     }
 
     /**
-     * Erstellt ein Menü und arbeitet damit
+     * Verlinkt das Hauptmenü und arbeitet damit
      * @param menu
      * @return
      */
@@ -52,10 +56,13 @@ public class VerleihenAusleihenActivity extends AppCompatActivity {
                 startActivity(intent);
                 return true;
 
+            case R.id.impressum:
+                intent = new Intent(this , impressumActivity.class);
+                startActivity(intent);
+                return true;
+
             default:  return super.onOptionsItemSelected(item);
         }
-
-
     }
 
     /**

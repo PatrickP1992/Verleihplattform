@@ -1,7 +1,8 @@
-package at.patrick.petzmann.verleihplattform;
+package at.patrick.petzmann.verleihplattform.Menüklassen;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+import at.patrick.petzmann.verleihplattform.R;
 
 public class NachrichtenActivity extends AppCompatActivity {
 

@@ -14,4 +14,8 @@
           android:title="AGBs"
           app:showAsAction="never"/>
 
+    <item android:id="@+id/impressum"
+          android:title="Impressum"
+          app:showAsAction="never"/>
+
 </menu>

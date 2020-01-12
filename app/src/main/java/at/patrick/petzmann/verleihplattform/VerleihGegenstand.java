@@ -64,11 +64,10 @@ public class VerleihGegenstand extends AppCompatActivity {
 
         String vonDatumString = vonDatumTextView.getText().toString();
         String bisDatumString = bisDatumTextView.getText().toString();
+        boolean dateIsTrue;
 
         Date vonDatum = new Date();
         Date bisDatum = new Date();
-
-        boolean dateIsTrue;
 
         if (Methods.matches(vonDatumString) && Methods.matches(bisDatumString)) {
             dateIsTrue = true;
@@ -88,6 +87,9 @@ public class VerleihGegenstand extends AppCompatActivity {
                 Verleihsystem.setVerleihsystem(verleihsystem); // verleihsystem wird gespeichert
                 startActivity(intent);
             }
+        } else if (name.isEmpty() && adresse.isEmpty() && plz.isEmpty() && ort.isEmpty()) {
+            Toast message = Toast.makeText(getApplicationContext(), "Bitte alle Daten eingeben!!", Toast.LENGTH_SHORT);
+            message.show();
         } else if (!rightDate) {
             Toast message = Toast.makeText(getApplicationContext(), "Korrektes Datum eingeben!", Toast.LENGTH_SHORT);
             message.show();

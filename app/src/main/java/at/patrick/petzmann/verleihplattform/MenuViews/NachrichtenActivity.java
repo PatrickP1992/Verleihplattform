@@ -1,4 +1,4 @@
-package at.patrick.petzmann.verleihplattform.Menüklassen;
+package at.patrick.petzmann.verleihplattform.MenuViews;
 
 import android.content.Intent;
 import android.view.Menu;
@@ -9,16 +9,16 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import at.patrick.petzmann.verleihplattform.R;
 
-public class impressumActivity extends AppCompatActivity {
+public class NachrichtenActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_impressum);
+        setContentView(R.layout.activity_nachrichten);
     }
 
     /**
-     * Verlinkt das Impressum-Menü und arbeitet damit
+     * Verlinkt das Nachrichten-Menü und arbeitet damit
      * @param menu
      * @return
      */
@@ -26,7 +26,7 @@ public class impressumActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.impressummenu, menu);
+        inflater.inflate(R.menu.messagemenu, menu);
         return true;
     }
 
@@ -39,13 +39,13 @@ public class impressumActivity extends AppCompatActivity {
                 startActivity(intent);
                 return true;
 
-            case R.id.messages:
-                intent = new Intent(this, NachrichtenActivity.class);
+            case R.id.AGB:
+                intent = new Intent(this, AGBsActivity.class);
                 startActivity(intent);
                 return true;
 
-            case R.id.AGB:
-                intent = new Intent(this, AGBsActivity.class);
+            case R.id.impressum:
+                intent = new Intent(this , impressumActivity.class);
                 startActivity(intent);
                 return true;
 

@@ -12,13 +12,13 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity android:name=".Menüklassen.impressumActivity">
+        <activity android:name=".MenuViews.impressumActivity">
         </activity>
-        <activity android:name=".Menüklassen.NachrichtenActivity">
+        <activity android:name=".MenuViews.NachrichtenActivity">
         </activity>
-        <activity android:name=".Menüklassen.AGBsActivity">
+        <activity android:name=".MenuViews.AGBsActivity">
         </activity>
-        <activity android:name=".Menüklassen.MyAccountActivity">
+        <activity android:name=".MenuViews.MyAccountActivity">
         </activity>
         <activity android:name=".WillAusleihenActivity"/>
         <activity android:name=".AngebotErstelltActivity"/>

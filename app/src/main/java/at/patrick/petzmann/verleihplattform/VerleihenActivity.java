@@ -9,10 +9,10 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import at.patrick.petzmann.verleihplattform.Menüklassen.AGBsActivity;
-import at.patrick.petzmann.verleihplattform.Menüklassen.MyAccountActivity;
-import at.patrick.petzmann.verleihplattform.Menüklassen.NachrichtenActivity;
-import at.patrick.petzmann.verleihplattform.Menüklassen.impressumActivity;
+import at.patrick.petzmann.verleihplattform.MenuViews.AGBsActivity;
+import at.patrick.petzmann.verleihplattform.MenuViews.MyAccountActivity;
+import at.patrick.petzmann.verleihplattform.MenuViews.NachrichtenActivity;
+import at.patrick.petzmann.verleihplattform.MenuViews.impressumActivity;
 
 public class VerleihenActivity extends AppCompatActivity {
 

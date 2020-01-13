@@ -1,4 +1,4 @@
-package at.patrick.petzmann.verleihplattform.Menüklassen;
+package at.patrick.petzmann.verleihplattform.MenuViews;
 
 import android.content.Intent;
 import android.view.Menu;
@@ -9,16 +9,16 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import at.patrick.petzmann.verleihplattform.R;
 
-public class AGBsActivity extends AppCompatActivity {
+public class impressumActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_agbs);
+        setContentView(R.layout.activity_impressum);
     }
 
     /**
-     * Verlinkt das AGB-Menü und arbeitet damit
+     * Verlinkt das Impressum-Menü und arbeitet damit
      * @param menu
      * @return
      */
@@ -26,7 +26,7 @@ public class AGBsActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.agbmenu, menu);
+        inflater.inflate(R.menu.impressummenu, menu);
         return true;
     }
 
@@ -44,8 +44,8 @@ public class AGBsActivity extends AppCompatActivity {
                 startActivity(intent);
                 return true;
 
-            case R.id.impressum:
-                intent = new Intent(this , impressumActivity.class);
+            case R.id.AGB:
+                intent = new Intent(this, AGBsActivity.class);
                 startActivity(intent);
                 return true;
 

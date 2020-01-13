@@ -88,13 +88,13 @@ public class VerleihGegenstand extends AppCompatActivity {
                 startActivity(intent);
             }
         } else if (name.isEmpty() && adresse.isEmpty() && plz.isEmpty() && ort.isEmpty()) {
-            Toast message = Toast.makeText(getApplicationContext(), "Bitte alle Daten eingeben!!", Toast.LENGTH_SHORT);
-            message.show();
-        } else if (!rightDate) {
-            Toast message = Toast.makeText(getApplicationContext(), "Korrektes Datum eingeben!", Toast.LENGTH_SHORT);
+            Toast message = Toast.makeText(getApplicationContext(), "Bitte alle Daten eingeben!", Toast.LENGTH_SHORT);
             message.show();
         } else if (!dateIsTrue) {
             Toast message = Toast.makeText(getApplicationContext(), "Korrektes Datumsformat zB. 01.01.2020 eingeben!", Toast.LENGTH_SHORT);
+            message.show();
+        } else if (!rightDate) {
+            Toast message = Toast.makeText(getApplicationContext(), "Korrektes Datum eingeben!", Toast.LENGTH_SHORT);
             message.show();
         } else {
             Toast message = Toast.makeText(getApplicationContext(), "Bitte alle Daten eingeben!", Toast.LENGTH_SHORT);

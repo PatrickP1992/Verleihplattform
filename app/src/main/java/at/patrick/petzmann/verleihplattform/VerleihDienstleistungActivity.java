@@ -88,7 +88,7 @@ public class VerleihDienstleistungActivity extends AppCompatActivity {
                 Verleihsystem.setVerleihsystem(verleihsystem); // verleihsystem wird gespeichert
                 startActivity(intent);
             }
-        } else if (name.isEmpty() && adresse.isEmpty() && plz.isEmpty() && ort.isEmpty()) {
+        } else if (name.isEmpty() || adresse.isEmpty() || plz.isEmpty() || ort.isEmpty() || vonDatumString.isEmpty() || bisDatumString.isEmpty()) {
             Toast message = Toast.makeText(getApplicationContext(), "Bitte alle Daten eingeben!", Toast.LENGTH_SHORT);
             message.show();
         } else if (!dateIsTrue) {

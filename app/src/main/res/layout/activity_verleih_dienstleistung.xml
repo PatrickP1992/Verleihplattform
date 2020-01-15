@@ -64,7 +64,7 @@
             android:hint="@string/editText_VDienstDatumVon" android:textSize="23sp"/>
     <EditText
             android:layout_width="250dp"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:inputType="date|number"
             android:ems="10"
             android:id="@+id/editText_VDienstDatumBis"

@@ -177,14 +177,10 @@ public class Verleihsystem {
     }
 
     private void itemAusleih(Item item) {
-        if (this.activeUser.getPoints() != 0) {
-            item.setVerliehen(true);
-            this.activeUser.setPointsMinus();
-            item.setAusgeliehenVon(this.activeUser);
-            this.activeUser.addGelieheneGegenstände(item);
-        } else {
-            //to-do gib Error aus dass User zu wenige Punkte hat.
-        }
+        item.setVerliehen(true);
+        this.activeUser.setPointsMinus();
+        item.setAusgeliehenVon(this.activeUser);
+        this.activeUser.addGelieheneGegenstände(item);
     }
 
     public void itemVerleihen(Item item) {
@@ -193,10 +189,10 @@ public class Verleihsystem {
     }
 
     public void itemAusleihen(Item item) {
-        if (item.isVerliehen() == true) {
+        if (item.isVerliehen() == true || this.activeUser.getPoints() == 0) {
             //to-do gib Error aus dass Gegenstand schon verliehen ist.
         } else {
-            itemAusleihen(item);
+            itemAusleih(item);
         }
     }
 

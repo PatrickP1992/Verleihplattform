@@ -15,7 +15,7 @@ public class User {
         this.id = id;
         this.userName = userName;
         this.password = password;
-        this.points = 0;
+        this.points = 5;
     }
 
     //--Getter und Setter----------------------------------------------
@@ -43,12 +43,15 @@ public class User {
         return points;
     }
 
-    public void setPointsPlus(int points) {
+    public void setPointsPlus() {
         this.points = this.points + 5;
     }
 
     public void setPointsMinus() {
+        if (this.points - 1 > 0) {
+            this.points--;
+        }
 
     }
 
-    }
+}

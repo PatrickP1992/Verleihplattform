@@ -204,6 +204,7 @@ public class Verleihsystem{
     public void itemVerleihen(Item item){
         item.setVerliehen(false);
         this.activeUser.setPointsPlus();
+
     }
 
     //--Konstruktor---------------------------------------------------------------------------------

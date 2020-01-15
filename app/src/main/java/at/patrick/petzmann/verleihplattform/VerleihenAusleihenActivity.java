@@ -17,6 +17,7 @@ import at.patrick.petzmann.verleihplattform.MenuViews.impressumActivity;
 public class VerleihenAusleihenActivity extends AppCompatActivity {
 
     public Verleihsystem verleihsystem = Verleihsystem.getVerleihsystem();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,6 +27,7 @@ public class VerleihenAusleihenActivity extends AppCompatActivity {
 
     /**
      * Verlinkt das Hauptmenü und arbeitet damit
+     *
      * @param menu
      * @return
      */
@@ -40,7 +42,7 @@ public class VerleihenAusleihenActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         Intent intent;
-        switch(item.getItemId()){
+        switch (item.getItemId()) {
             case R.id.myaccount:
                 intent = new Intent(this, MyAccountActivity.class);
                 startActivity(intent);
@@ -57,20 +59,21 @@ public class VerleihenAusleihenActivity extends AppCompatActivity {
                 return true;
 
             case R.id.impressum:
-                intent = new Intent(this , impressumActivity.class);
+                intent = new Intent(this, impressumActivity.class);
                 startActivity(intent);
                 return true;
 
-            default:  return super.onOptionsItemSelected(item);
+            default:
+                return super.onOptionsItemSelected(item);
         }
     }
 
     /**
      * wechselt zu AusleihenActivity
+     *
      * @param view
      */
-    public void ausleihen(View view)
-    {
+    public void ausleihen(View view) {
         Intent intent = new Intent(this, AusleihenActivity.class);
         startActivity(intent);
     }
@@ -78,10 +81,10 @@ public class VerleihenAusleihenActivity extends AppCompatActivity {
 
     /**
      * wechselt zu VerleihenActivity
+     *
      * @param view
      */
-    public void verleihen(View view)
-    {
+    public void verleihen(View view) {
         Intent intent = new Intent(this, VerleihenActivity.class);
         startActivity(intent);
     }

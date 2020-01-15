@@ -8,6 +8,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import at.patrick.petzmann.verleihplattform.R;
+import at.patrick.petzmann.verleihplattform.VerleihenAusleihenActivity;
 
 public class AGBsActivity extends AppCompatActivity {
 
@@ -34,6 +35,11 @@ public class AGBsActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         Intent intent;
         switch(item.getItemId()){
+            case R.id.home:
+                intent = new Intent(this, VerleihenAusleihenActivity.class);
+                startActivity(intent);
+                return true;
+
             case R.id.myaccount:
                 intent = new Intent(this, MyAccountActivity.class);
                 startActivity(intent);

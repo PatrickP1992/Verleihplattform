@@ -42,7 +42,7 @@ public class AusleihenActivity extends AppCompatActivity {
     }
 
     /**
-     * Verlinkt das Hauptmenü und arbeitet damit
+     * Verlinkt das Home-menü und arbeitet damit
      * @param menu
      * @return
      */
@@ -50,7 +50,7 @@ public class AusleihenActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.mainmenu, menu);
+        inflater.inflate(R.menu.homemenu, menu);
         return true;
     }
 
@@ -58,6 +58,11 @@ public class AusleihenActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         Intent intent;
         switch(item.getItemId()){
+            case R.id.home:
+                intent = new Intent(this, VerleihenAusleihenActivity.class);
+                startActivity(intent);
+                return true;
+
             case R.id.myaccount:
                 intent = new Intent(this, MyAccountActivity.class);
                 startActivity(intent);

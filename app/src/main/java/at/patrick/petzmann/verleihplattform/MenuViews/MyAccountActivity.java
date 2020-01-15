@@ -14,6 +14,7 @@ import at.patrick.petzmann.verleihplattform.AusleihenDienstleistungActivity;
 import at.patrick.petzmann.verleihplattform.Klassen.ItemAdapter;
 import at.patrick.petzmann.verleihplattform.Klassen.Verleihsystem;
 import at.patrick.petzmann.verleihplattform.R;
+import at.patrick.petzmann.verleihplattform.VerleihenAusleihenActivity;
 import at.patrick.petzmann.verleihplattform.WillAusleihenActivity;
 
 public class MyAccountActivity extends AppCompatActivity {
@@ -25,7 +26,7 @@ public class MyAccountActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_account);
 
-        myListView = findViewById(R.id.listViewAusgeliehen);
+        if(verleihsystem.getActiveUser().getGelieheneItems().size()!=0){myListView = findViewById(R.id.listViewAusgeliehen);
         final ItemAdapter myAdapter = new ItemAdapter(this, this.verleihsystem.getActiveUser().getIdNumber(),verleihsystem.getActiveUser().getItemName(),verleihsystem.getActiveUser().getPictureCode());
         myListView.setAdapter(myAdapter);
 
@@ -35,7 +36,7 @@ public class MyAccountActivity extends AppCompatActivity {
                 int[]ids = verleihsystem.getFilterReturnItemId();
                 Verleihsystem.setVerleihsystem(verleihsystem); // verleihsystem wird gespeichert
             }
-        });
+        });}
     }
 
     /**
@@ -55,6 +56,11 @@ public class MyAccountActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         Intent intent;
         switch(item.getItemId()){
+            case R.id.home:
+                intent = new Intent(this, VerleihenAusleihenActivity.class);
+                startActivity(intent);
+                return true;
+
             case R.id.messages:
                 intent = new Intent(this, NachrichtenActivity.class);
                 startActivity(intent);

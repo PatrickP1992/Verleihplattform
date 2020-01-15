@@ -8,12 +8,14 @@ public class User {
     private int id;
     private String userName;
     private String password;
+    private int points;
 
     // --Konstruktor----------------------------------------------------
     public User(int id, String userName, String password) {
         this.id = id;
         this.userName = userName;
         this.password = password;
+        this.points = 0;
     }
 
     //--Getter und Setter----------------------------------------------
@@ -36,4 +38,17 @@ public class User {
     public void setPassword(String password) {
         this.password = password;
     }
-}
+
+    public int getPoints() {
+        return points;
+    }
+
+    public void setPointsPlus(int points) {
+        this.points = this.points + 5;
+    }
+
+    public void setPointsMinus() {
+
+    }
+
+    }

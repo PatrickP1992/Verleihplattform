@@ -196,6 +196,10 @@ public class Verleihsystem{
         }
     }
 
+    public void itemAusleihen(Item item){
+        item.setVerliehen(true);
+        this.activeUser.setPoints(activeUser.getPoints() + 1);
+    }
     //--Konstruktor---------------------------------------------------------------------------------
     public Verleihsystem(ArrayList<User> users, ArrayList<Gegenstand> gegenstaende, ArrayList<Dienstleistung> dienstleistungen, ItemFactory itemFactory) {
         this.users = users;

@@ -147,6 +147,7 @@ public class Verleihsystem {
      * @param filterText
      * @param kategorie
      */
+
     public void setCurrentFilter(TextView filterText, User user, Kategorie kategorie) {
         int i = 0;
         if (kategorie.equals(Kategorie.DIENSTLEISTUNG)) {

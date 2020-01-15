@@ -9,7 +9,7 @@ public class User {
     private String userName;
     private String password;
     private int points;
-    private ArrayList<Item> gelieheneGegenstände;
+    private ArrayList<Item> gelieheneItems;
 
     private String[] itemName;
     private int[] idNumber;
@@ -21,7 +21,7 @@ public class User {
         this.userName = userName;
         this.password = password;
         this.points = 5;
-        gelieheneGegenstände = new ArrayList<>();
+        gelieheneItems = new ArrayList<>();
     }
 
     //--Getter und Setter----------------------------------------------
@@ -72,25 +72,25 @@ public class User {
         return pictureCode;
     }
 
-    public ArrayList<Item> getGelieheneGegenstände() {
-        return gelieheneGegenstände;
+    public ArrayList<Item> getGelieheneItems() {
+        return gelieheneItems;
     }
 
     public void addGelieheneGegenstände(Item item) {
-        for (Item i : gelieheneGegenstände) {
+        for (Item i : gelieheneItems) {
             if (i.getId() == item.getId()) {
                 // to-do Error Message dass gegenstand schon in der liste ist.
                 return;
             }
         }
-        this.gelieheneGegenstände.add(item);
+        this.gelieheneItems.add(item);
         filterForArrays();
     }
 
     public void deleteGelieheneGegenstände(Item item) {
-        for (Item i : gelieheneGegenstände) {
+        for (Item i : gelieheneItems) {
             if (i.getId() == item.getId()) {
-                gelieheneGegenstände.remove(item);
+                gelieheneItems.remove(item);
                 filterForArrays();
                 return;
             }
@@ -100,14 +100,14 @@ public class User {
 
     private void filterForArrays() {
 
-        this.itemName = new String[gelieheneGegenstände.size()];
-        this.idNumber = new int[gelieheneGegenstände.size()];
-        this.pictureCode = new int[gelieheneGegenstände.size()];
+        this.itemName = new String[gelieheneItems.size()];
+        this.idNumber = new int[gelieheneItems.size()];
+        this.pictureCode = new int[gelieheneItems.size()];
 
-        for (int i = 0; i < gelieheneGegenstände.size(); i++) {
-            this.itemName[i] = gelieheneGegenstände.get(i).getName();
-            this.idNumber[i] = gelieheneGegenstände.get(i).getId();
-            this.pictureCode[i] = gelieheneGegenstände.get(i).getImageRessource();
+        for (int i = 0; i < gelieheneItems.size(); i++) {
+            this.itemName[i] = gelieheneItems.get(i).getName();
+            this.idNumber[i] = gelieheneItems.get(i).getId();
+            this.pictureCode[i] = gelieheneItems.get(i).getImageRessource();
         }
     }
 

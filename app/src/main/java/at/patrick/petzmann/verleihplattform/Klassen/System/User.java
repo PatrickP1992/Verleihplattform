@@ -1,4 +1,4 @@
-package at.patrick.petzmann.verleihplattform.Klassen;
+package at.patrick.petzmann.verleihplattform.Klassen.System;
 
 import java.util.ArrayList;
 
@@ -9,11 +9,11 @@ public class User {
     private String userName;
     private String password;
     private int points;
-    private ArrayList<Item> gelieheneItems;
+   // private ArrayList<Item> gelieheneItems;
 
-    private String[] itemName;
-    private int[] idNumber;
-    private int[] pictureCode;
+   // private String[] itemName;
+   // private int[] idNumber;
+    // private int[] pictureCode;
 
     // --Konstruktor----------------------------------------------------
     public User(int id, String userName, String password) {
@@ -21,7 +21,7 @@ public class User {
         this.userName = userName;
         this.password = password;
         this.points = 5;
-        gelieheneItems = new ArrayList<>();
+        //gelieheneItems = new ArrayList<>();
     }
 
     //--Getter und Setter----------------------------------------------
@@ -49,17 +49,23 @@ public class User {
         return points;
     }
 
-    public void setPointsPlus() {
+    public void setPoints(int points) {
+        this.points = points;
+    }
+
+    public void setPointsPlus5() {
         this.points = this.points + 5;
     }
 
-    public void setPointsMinus() {
-        if (this.points - 1 > 0) {
-            this.points = this.points - 1;
-        }
-
+    public void setPointsPlus1() {
+        points++;
     }
 
+    public void setPointsMinus() {
+        points--;
+    }
+
+    /*
     public String[] getItemName() {
         return itemName;
     }
@@ -110,5 +116,7 @@ public class User {
             this.pictureCode[i] = gelieheneItems.get(i).getImageRessource();
         }
     }
+
+     */
 
 }

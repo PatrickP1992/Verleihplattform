@@ -6,25 +6,21 @@ import android.view.MenuItem;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
 
-import at.patrick.petzmann.verleihplattform.Klassen.Dienstleistung;
-import at.patrick.petzmann.verleihplattform.Klassen.Gegenstand;
-import at.patrick.petzmann.verleihplattform.Klassen.ItemFactory;
-import at.patrick.petzmann.verleihplattform.Klassen.Kategorie;
-import at.patrick.petzmann.verleihplattform.Klassen.ObjectSerializer;
-import at.patrick.petzmann.verleihplattform.Klassen.User;
-import at.patrick.petzmann.verleihplattform.Klassen.Verleihsystem;
+import at.patrick.petzmann.verleihplattform.Klassen.System.Dienstleistung;
+import at.patrick.petzmann.verleihplattform.Klassen.System.Gegenstand;
+import at.patrick.petzmann.verleihplattform.Klassen.Other.ItemFactory;
+import at.patrick.petzmann.verleihplattform.Klassen.System.Kategorie;
+import at.patrick.petzmann.verleihplattform.Klassen.System.User;
+import at.patrick.petzmann.verleihplattform.Klassen.System.Verleihsystem;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -114,40 +110,45 @@ public class MainActivity extends AppCompatActivity {
         if (Verleihsystem.getVerleihsystem()==null)
         {
             Verleihsystem.setVerleihsystem(new Verleihsystem(users,gegenstaende,dienstleistungen,itemFactory));
+            verleihsystem = Verleihsystem.getVerleihsystem();
+
+
+            //----Dienstleistungen hinzufügen----------------------------------------------------------------------
+            verleihsystem.createItem(patrick,"Nachhilfe in Mathe","UNI","9020","Klagenfurt",new Date(),new Date(), Kategorie.DIENSTLEISTUNG);
+            verleihsystem.createItem(patrick,"Name","Adresse","plz","Ort",new Date(),new Date(), Kategorie.DIENSTLEISTUNG);
+            verleihsystem.createItem(patrick,"Name","Adresse","plz","Ort",new Date(),new Date(), Kategorie.DIENSTLEISTUNG);
+            verleihsystem.createItem(patrick,"Name","Adresse","plz","Ort",new Date(),new Date(), Kategorie.DIENSTLEISTUNG);
+            verleihsystem.createItem(patrick,"Name","Adresse","plz","Ort",new Date(),new Date(), Kategorie.DIENSTLEISTUNG);
+            verleihsystem.createItem(patrick,"Name","Adresse","plz","Ort",new Date(),new Date(), Kategorie.DIENSTLEISTUNG);
+            verleihsystem.createItem(patrick,"Name","Adresse","plz","Ort",new Date(),new Date(), Kategorie.DIENSTLEISTUNG);
+            verleihsystem.createItem(patrick,"Name","Adresse","plz","Ort",new Date(),new Date(), Kategorie.DIENSTLEISTUNG);
+            verleihsystem.createItem(patrick,"Name","Adresse","plz","Ort",new Date(),new Date(), Kategorie.DIENSTLEISTUNG);
+            verleihsystem.createItem(patrick,"Name","Adresse","plz","Ort",new Date(),new Date(), Kategorie.DIENSTLEISTUNG);
+            verleihsystem.createItem(patrick,"Name","Adresse","plz","Ort",new Date(),new Date(), Kategorie.DIENSTLEISTUNG);
+            verleihsystem.createItem(patrick,"Name","Adresse","plz","Ort",new Date(),new Date(), Kategorie.DIENSTLEISTUNG);
+
+
+            //----Gegenstände hinzufügen----------------------------------------------------------------------------
+            verleihsystem.createItem(patrick,"Taschenrechner","Uni","9020","KLagenfurt",new Date(),new Date(), Kategorie.GEGENSTAND);
+            verleihsystem.createItem(patrick,"Name1","Adresse","plz","Ort",new Date(),new Date(), Kategorie.GEGENSTAND);
+            verleihsystem.createItem(patrick,"Name2","Adresse","plz","Ort",new Date(),new Date(), Kategorie.GEGENSTAND);
+            verleihsystem.createItem(patrick,"Name3","Adresse","plz","Ort",new Date(),new Date(), Kategorie.GEGENSTAND);
+            verleihsystem.createItem(patrick,"Name4","Adresse","plz","Ort",new Date(),new Date(), Kategorie.GEGENSTAND);
+            verleihsystem.createItem(patrick,"Name5","Adresse","plz","Ort",new Date(),new Date(), Kategorie.GEGENSTAND);
+            verleihsystem.createItem(patrick,"Name6","Adresse","plz","Ort",new Date(),new Date(), Kategorie.GEGENSTAND);
+            verleihsystem.createItem(patrick,"Name7","Adresse","plz","Ort",new Date(),new Date(), Kategorie.GEGENSTAND);
+            verleihsystem.createItem(patrick,"Name8","Adresse","plz","Ort",new Date(),new Date(), Kategorie.GEGENSTAND);
+            verleihsystem.createItem(patrick,"Name9","Adresse","plz","Ort",new Date(),new Date(), Kategorie.GEGENSTAND);
+            verleihsystem.createItem(patrick,"Name10","Adresse","plz","Ort",new Date(),new Date(), Kategorie.GEGENSTAND);
+
+
+
         }
 
-        //verleihsystem.setActiveUser(patrick);
+
         verleihsystem = Verleihsystem.getVerleihsystem();
 
-        //----Dienstleistungen hinzufügen----------------------------------------------------------------------
-        verleihsystem.createItem(patrick,"Nachhilfe in Mathe","UNI","9020","Klagenfurt",new Date(),new Date(), Kategorie.DIENSTLEISTUNG);
-        verleihsystem.createItem(patrick,"Name","Adresse","plz","Ort",new Date(),new Date(), Kategorie.DIENSTLEISTUNG);
-        verleihsystem.createItem(patrick,"Name","Adresse","plz","Ort",new Date(),new Date(), Kategorie.DIENSTLEISTUNG);
-        verleihsystem.createItem(patrick,"Name","Adresse","plz","Ort",new Date(),new Date(), Kategorie.DIENSTLEISTUNG);
-        verleihsystem.createItem(patrick,"Name","Adresse","plz","Ort",new Date(),new Date(), Kategorie.DIENSTLEISTUNG);
-        verleihsystem.createItem(patrick,"Name","Adresse","plz","Ort",new Date(),new Date(), Kategorie.DIENSTLEISTUNG);
-        verleihsystem.createItem(patrick,"Name","Adresse","plz","Ort",new Date(),new Date(), Kategorie.DIENSTLEISTUNG);
-        verleihsystem.createItem(patrick,"Name","Adresse","plz","Ort",new Date(),new Date(), Kategorie.DIENSTLEISTUNG);
-        verleihsystem.createItem(patrick,"Name","Adresse","plz","Ort",new Date(),new Date(), Kategorie.DIENSTLEISTUNG);
-        verleihsystem.createItem(patrick,"Name","Adresse","plz","Ort",new Date(),new Date(), Kategorie.DIENSTLEISTUNG);
-        verleihsystem.createItem(patrick,"Name","Adresse","plz","Ort",new Date(),new Date(), Kategorie.DIENSTLEISTUNG);
-        verleihsystem.createItem(patrick,"Name","Adresse","plz","Ort",new Date(),new Date(), Kategorie.DIENSTLEISTUNG);
 
-
-        //----Gegenstände hinzufügen----------------------------------------------------------------------------
-        verleihsystem.createItem(patrick,"Taschenrechner","Uni","9020","KLagenfurt",new Date(),new Date(), Kategorie.GEGENSTAND);
-        verleihsystem.createItem(patrick,"Name1","Adresse","plz","Ort",new Date(),new Date(), Kategorie.GEGENSTAND);
-        verleihsystem.createItem(patrick,"Name2","Adresse","plz","Ort",new Date(),new Date(), Kategorie.GEGENSTAND);
-        verleihsystem.createItem(patrick,"Name3","Adresse","plz","Ort",new Date(),new Date(), Kategorie.GEGENSTAND);
-        verleihsystem.createItem(patrick,"Name4","Adresse","plz","Ort",new Date(),new Date(), Kategorie.GEGENSTAND);
-        verleihsystem.createItem(patrick,"Name5","Adresse","plz","Ort",new Date(),new Date(), Kategorie.GEGENSTAND);
-        verleihsystem.createItem(patrick,"Name6","Adresse","plz","Ort",new Date(),new Date(), Kategorie.GEGENSTAND);
-        verleihsystem.createItem(patrick,"Name7","Adresse","plz","Ort",new Date(),new Date(), Kategorie.GEGENSTAND);
-        verleihsystem.createItem(patrick,"Name8","Adresse","plz","Ort",new Date(),new Date(), Kategorie.GEGENSTAND);
-        verleihsystem.createItem(patrick,"Name9","Adresse","plz","Ort",new Date(),new Date(), Kategorie.GEGENSTAND);
-        verleihsystem.createItem(patrick,"Name10","Adresse","plz","Ort",new Date(),new Date(), Kategorie.GEGENSTAND);
-
-        //verleihsystem.getActiveUser().getGelieheneItems().add(verleihsystem.getItemFactory().createItem(patrick,"Beispiel","Adresse","plz","Ort",new Date(),new Date(), Kategorie.GEGENSTAND));
 
     }
 }

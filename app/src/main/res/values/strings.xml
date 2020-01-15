@@ -21,5 +21,7 @@
     <string name="VGegenstandOrtAutoTextView">Ort</string>
     <string name="textView_AngebotErstellt">Das Angebot wurde erstellt!</string>
     <string name="button_AngebotErstelltHome">zurück zu Home</string>
+    <string name="title_activity_meine_items">MeineItemsActivity</string>
+    <string name="title_activity_von_mir_ausgeliehen">VonMirAusgeliehenActivity</string>
 
 </resources>

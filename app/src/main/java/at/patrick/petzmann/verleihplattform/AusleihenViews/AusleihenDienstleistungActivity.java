@@ -1,4 +1,4 @@
-package at.patrick.petzmann.verleihplattform;
+package at.patrick.petzmann.verleihplattform.AusleihenViews;
 
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -10,20 +10,18 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import java.util.ArrayList;
-
-import at.patrick.petzmann.verleihplattform.Klassen.Dienstleistung;
-import at.patrick.petzmann.verleihplattform.Klassen.ItemAdapter;
-import at.patrick.petzmann.verleihplattform.Klassen.Kategorie;
-import at.patrick.petzmann.verleihplattform.Klassen.Verleihsystem;
+import at.patrick.petzmann.verleihplattform.Klassen.Other.ItemAdapter;
+import at.patrick.petzmann.verleihplattform.Klassen.System.Kategorie;
+import at.patrick.petzmann.verleihplattform.Klassen.System.Verleihsystem;
 import at.patrick.petzmann.verleihplattform.MenuViews.AGBsActivity;
 import at.patrick.petzmann.verleihplattform.MenuViews.MyAccountActivity;
 import at.patrick.petzmann.verleihplattform.MenuViews.NachrichtenActivity;
 import at.patrick.petzmann.verleihplattform.MenuViews.impressumActivity;
+import at.patrick.petzmann.verleihplattform.R;
+import at.patrick.petzmann.verleihplattform.VerleihenAusleihenActivity;
 
 public class AusleihenDienstleistungActivity extends AppCompatActivity {
 
@@ -38,22 +36,27 @@ public class AusleihenDienstleistungActivity extends AppCompatActivity {
 
         filterText = findViewById(R.id.ausleihenDienstleistungTextView);
 
-        verleihsystem.setCurrentFilter(filterText,verleihsystem.getActiveUser(),  Kategorie.DIENSTLEISTUNG);
+        verleihsystem.setCurrentFilterAusleihen(filterText,verleihsystem.getActiveUser(),  Kategorie.DIENSTLEISTUNG);
 
-        myListView = findViewById(R.id.listViewDienstleistungen);
-        final ItemAdapter myAdapter = new ItemAdapter(this,verleihsystem.getFilterReturnItemId(),verleihsystem.getFilterReturnNames(),verleihsystem.getFilterReturnPictureRes());
-        myListView.setAdapter(myAdapter);
+        // Wird nur ausgeführt wenn etwas gefunden wurde
+        if (verleihsystem.getFilterReturnItemId().length != 0)
+        {
+            myListView = findViewById(R.id.listViewDienstleistungen);
+            final ItemAdapter myAdapter = new ItemAdapter(this,verleihsystem.getFilterReturnItemId(),verleihsystem.getFilterReturnNames(),verleihsystem.getFilterReturnPictureRes());
+            myListView.setAdapter(myAdapter);
 
-        myListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent myIntent = new Intent(AusleihenDienstleistungActivity.this,WillAusleihenActivity.class);
-                int[]ids = verleihsystem.getFilterReturnItemId();
-                myIntent.putExtra("itemId", ids[position]);
-                Verleihsystem.setVerleihsystem(verleihsystem); // verleihsystem wird gespeichert
-                startActivity(myIntent);
-            }
-        });
+            myListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                    Intent myIntent = new Intent(AusleihenDienstleistungActivity.this,WillAusleihenActivity.class);
+                    int[]ids = verleihsystem.getFilterReturnItemId();
+                    myIntent.putExtra("itemId", ids[position]);
+                    Verleihsystem.setVerleihsystem(verleihsystem); // verleihsystem wird gespeichert
+                    startActivity(myIntent);
+                }
+            });
+        }
+
     }
 
     @Override

@@ -41,8 +41,6 @@ public class MeineItemsActivity extends AppCompatActivity {
         // Wird nur ausgeführt wenn etwas gefunden wurde
         if (verleihsystem.getFilterReturnItemId().length != 0)
         {
-            Toast message = Toast.makeText(getApplicationContext(),verleihsystem.getActiveUser().getUserName(), Toast.LENGTH_SHORT);
-            message.show();
 
             myListView = findViewById(R.id.listMeineItems);
             final ItemAdapter myAdapter = new ItemAdapter(this,verleihsystem.getFilterReturnItemId(),verleihsystem.getFilterReturnNames(),verleihsystem.getFilterReturnPictureRes());

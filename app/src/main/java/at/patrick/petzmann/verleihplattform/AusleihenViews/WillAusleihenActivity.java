@@ -67,10 +67,23 @@ public class WillAusleihenActivity extends AppCompatActivity {
     }
 
     public void ausleihenItem(View view){
-        this.verleihsystem.itemAusleihen(toShow);
+
+        if (verleihsystem.itemAusleihen(toShow))
+
+        {
+            // Punkte werden um 5 erhöht
+            verleihsystem.getActiveUser().setPointsPlus5();
+
+            Toast message2 = Toast.makeText(getApplicationContext(), "Anfrage erstellt und Punkte wurden erhöht", Toast.LENGTH_SHORT);
+            message2.show();
+
+        }
+
+
+
+
         Verleihsystem.setVerleihsystem(verleihsystem); // verleihsystem wird gespeichert
-        Toast message = Toast.makeText(getApplicationContext(), "Anfrage erstellt", Toast.LENGTH_SHORT);
-        message.show();
+
         Intent intent = new Intent(this, VerleihenAusleihenActivity.class);
         startActivity(intent);
     }

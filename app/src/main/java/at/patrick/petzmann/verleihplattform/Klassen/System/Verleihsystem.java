@@ -1,6 +1,8 @@
 package at.patrick.petzmann.verleihplattform.Klassen.System;
 
+import android.util.Log;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -197,7 +199,7 @@ public class Verleihsystem {
 
 
     /**
-     * Gibt die Items in die Arrays die vom aktuellen Nutzer ausgelihen wurden
+     * Gibt die Items in die Arrays die vom aktuellen Nutzer ausgeliehen wurden
      */
     public void setCurrentFilterAusgeliehenVonMir()
     {
@@ -206,8 +208,7 @@ public class Verleihsystem {
         filterReturnItemId = new int[0];
 
         for (Dienstleistung d : dienstleistungen) {
-
-            if (d.getAusgeliehenVon().equals(activeUser.getUserName()))
+            if (d.getAusgeliehenVon().equals(activeUser))
             {
                 filterReturnItemId = ArrayExt.add(filterReturnItemId, d.getId());
                 filterReturnNames = ArrayExt.add(filterReturnNames, d.getName());
@@ -217,7 +218,7 @@ public class Verleihsystem {
         }
 
         for (Gegenstand g : gegenstaende) {
-            if (g.getAusgeliehenVon().equals(activeUser.getUserName()))
+           if (g.getAusgeliehenVon().equals(activeUser))
             {
                 filterReturnItemId = ArrayExt.add(filterReturnItemId, g.getId());
                 filterReturnNames = ArrayExt.add(filterReturnNames, g.getName());
@@ -235,7 +236,7 @@ public class Verleihsystem {
 
         for (Dienstleistung d : dienstleistungen) {
 
-            if (d.getOwner().equals(activeUser.getUserName()))
+            if (d.getOwner().equals(activeUser))
             {
                 filterReturnItemId = ArrayExt.add(filterReturnItemId, d.getId());
                 filterReturnNames = ArrayExt.add(filterReturnNames, d.getName());
@@ -245,7 +246,7 @@ public class Verleihsystem {
         }
 
         for (Gegenstand g : gegenstaende) {
-            if (g.getOwner().equals(activeUser.getUserName()))
+            if (g.getOwner().equals(activeUser))
             {
                 filterReturnItemId = ArrayExt.add(filterReturnItemId, g.getId());
                 filterReturnNames = ArrayExt.add(filterReturnNames, g.getName());
@@ -259,16 +260,24 @@ public class Verleihsystem {
      * Item wird ausgeliehen
      * @param item Item für Ausleih wird übergeben
      */
-    public void itemAusleihen(Item item) {
+    public boolean itemAusleihen(Item item) {
 
         // Wenn nochnicht ausgeliehen und user genügend Punkte hat
-        if (!item.isVerliehen() && activeUser.getPoints() > 0 )
+        if (item.isVerliehen())
+        {
+            return false;
+        }
+        else if (activeUser.getPoints() > 0 )
         {
             item.setAusgeliehenVon(activeUser);
             item.setVerliehen(true);
             activeUser.setPointsMinus();
+
+            return true;
         }
 
+
+        return false;
     }
 
 
@@ -281,7 +290,7 @@ public class Verleihsystem {
         if(item.isVerliehen())
         {
             item.setVerliehen(false);
-            item.setAusgeliehenVon(null);
+            item.setAusgeliehenVon(new User(-1,"-1","-1")); // Wird zurückgesetzt
             activeUser.setPointsPlus1();
         }
     }

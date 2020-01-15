@@ -40,6 +40,7 @@ public abstract class Item {
         this.verliehen = false;
         this.kategorie = kategorie;
         imageRessource = R.drawable.ic_launcher_foreground; // Standart Bild
+        this.ausgeliehenVon = new User(-1,"-1","-1");
     }
 
     //--Getter und Setter----------------------------------------------

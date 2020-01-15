@@ -88,7 +88,7 @@ public class MyAccountActivity extends AppCompatActivity {
      * @param view
      */
     public void vonMirAusgeliehen(View view) {
-        Intent intent = new Intent(this, VonMirAusgeliehenActivity.class);
-        startActivity(intent);
+        Intent intent2 = new Intent(this, VonMirAusgeliehenActivity.class);
+        startActivity(intent2);
     }
 }

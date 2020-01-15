@@ -116,6 +116,7 @@ public class MainActivity extends AppCompatActivity {
             Verleihsystem.setVerleihsystem(new Verleihsystem(users,gegenstaende,dienstleistungen,itemFactory));
         }
 
+        //verleihsystem.setActiveUser(patrick);
         verleihsystem = Verleihsystem.getVerleihsystem();
 
         //----Dienstleistungen hinzufügen----------------------------------------------------------------------
@@ -135,17 +136,18 @@ public class MainActivity extends AppCompatActivity {
 
         //----Gegenstände hinzufügen----------------------------------------------------------------------------
         verleihsystem.createItem(patrick,"Taschenrechner","Uni","9020","KLagenfurt",new Date(),new Date(), Kategorie.GEGENSTAND);
-        verleihsystem.createItem(patrick,"Name","Adresse","plz","Ort",new Date(),new Date(), Kategorie.GEGENSTAND);
-        verleihsystem.createItem(patrick,"Name","Adresse","plz","Ort",new Date(),new Date(), Kategorie.GEGENSTAND);
-        verleihsystem.createItem(patrick,"Name","Adresse","plz","Ort",new Date(),new Date(), Kategorie.GEGENSTAND);
-        verleihsystem.createItem(patrick,"Name","Adresse","plz","Ort",new Date(),new Date(), Kategorie.GEGENSTAND);
-        verleihsystem.createItem(patrick,"Name","Adresse","plz","Ort",new Date(),new Date(), Kategorie.GEGENSTAND);
-        verleihsystem.createItem(patrick,"Name","Adresse","plz","Ort",new Date(),new Date(), Kategorie.GEGENSTAND);
-        verleihsystem.createItem(patrick,"Name","Adresse","plz","Ort",new Date(),new Date(), Kategorie.GEGENSTAND);
-        verleihsystem.createItem(patrick,"Name","Adresse","plz","Ort",new Date(),new Date(), Kategorie.GEGENSTAND);
-        verleihsystem.createItem(patrick,"Name","Adresse","plz","Ort",new Date(),new Date(), Kategorie.GEGENSTAND);
-        verleihsystem.createItem(patrick,"Name","Adresse","plz","Ort",new Date(),new Date(), Kategorie.GEGENSTAND);
+        verleihsystem.createItem(patrick,"Name1","Adresse","plz","Ort",new Date(),new Date(), Kategorie.GEGENSTAND);
+        verleihsystem.createItem(patrick,"Name2","Adresse","plz","Ort",new Date(),new Date(), Kategorie.GEGENSTAND);
+        verleihsystem.createItem(patrick,"Name3","Adresse","plz","Ort",new Date(),new Date(), Kategorie.GEGENSTAND);
+        verleihsystem.createItem(patrick,"Name4","Adresse","plz","Ort",new Date(),new Date(), Kategorie.GEGENSTAND);
+        verleihsystem.createItem(patrick,"Name5","Adresse","plz","Ort",new Date(),new Date(), Kategorie.GEGENSTAND);
+        verleihsystem.createItem(patrick,"Name6","Adresse","plz","Ort",new Date(),new Date(), Kategorie.GEGENSTAND);
+        verleihsystem.createItem(patrick,"Name7","Adresse","plz","Ort",new Date(),new Date(), Kategorie.GEGENSTAND);
+        verleihsystem.createItem(patrick,"Name8","Adresse","plz","Ort",new Date(),new Date(), Kategorie.GEGENSTAND);
+        verleihsystem.createItem(patrick,"Name9","Adresse","plz","Ort",new Date(),new Date(), Kategorie.GEGENSTAND);
+        verleihsystem.createItem(patrick,"Name10","Adresse","plz","Ort",new Date(),new Date(), Kategorie.GEGENSTAND);
 
+        //verleihsystem.getActiveUser().getGelieheneItems().add(verleihsystem.getItemFactory().createItem(patrick,"Beispiel","Adresse","plz","Ort",new Date(),new Date(), Kategorie.GEGENSTAND));
 
     }
 }

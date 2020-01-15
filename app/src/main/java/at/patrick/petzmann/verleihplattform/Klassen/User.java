@@ -55,7 +55,7 @@ public class User {
 
     public void setPointsMinus() {
         if (this.points - 1 > 0) {
-            this.points--;
+            this.points = this.points - 1;
         }
 
     }

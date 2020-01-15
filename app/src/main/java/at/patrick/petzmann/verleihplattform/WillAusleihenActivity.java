@@ -1,5 +1,6 @@
 package at.patrick.petzmann.verleihplattform;
 
+import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -53,5 +54,10 @@ public class WillAusleihenActivity extends AppCompatActivity {
         adresse.setText(toShow.getAdresse());
         plz.setText(toShow.getPlz());
         ort.setText(toShow.getOrt());
+    }
+
+    public void ausleihenItem(View view){
+        this.verleihsystem.itemAusleihen(toShow);
+        Verleihsystem.setVerleihsystem(verleihsystem); // verleihsystem wird gespeichert
     }
 }

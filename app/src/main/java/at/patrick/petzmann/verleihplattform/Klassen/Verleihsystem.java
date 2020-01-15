@@ -179,6 +179,7 @@ public class Verleihsystem {
 
     /**
      * Hilfsmethode für Item Ausleih
+     *
      * @param item Item für Ausleih wird übergeben
      */
     private void itemAusleih(Item item) {
@@ -190,6 +191,7 @@ public class Verleihsystem {
 
     /**
      * Methode für das Ausleihen von Items
+     *
      * @param item Item das AUsgeliehen werden sollte
      */
     public void itemVerleihen(Item item) {
@@ -199,18 +201,19 @@ public class Verleihsystem {
 
     /**
      * Methode für das Ausleihen von Items
+     *
      * @param item Das Auszuleihende Item sollte übergeben werden
      */
     public void itemAusleihen(Item item) {
-        if (item.isVerliehen() == true || this.activeUser.getPoints() == 0) {
-            //to-do gib Error aus dass Gegenstand schon verliehen ist.
-        } else {
+        if (item.isVerliehen() == false && this.activeUser.getPoints() >= 1) {
             itemAusleih(item);
         }
+
     }
 
     /**
      * Methode um geliehenen Gegenstand zurückzugeben
+     *
      * @param item Item das zurückgegeben werden sollte muss übergeben werden
      */
     public void geliehenesItemZurückgeben(Item item) {

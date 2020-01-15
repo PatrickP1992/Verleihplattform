@@ -1,11 +1,12 @@
-package at.patrick.petzmann.verleihplattform.Klassen;
+package at.patrick.petzmann.verleihplattform.Klassen.System;
 
-import android.content.Context;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Date;
+
+import at.patrick.petzmann.verleihplattform.Klassen.Other.ArrayExt;
+import at.patrick.petzmann.verleihplattform.Klassen.Other.ItemFactory;
 
 public class Verleihsystem {
 
@@ -61,6 +62,9 @@ public class Verleihsystem {
                 }
             }
             gegenstaende.add((Gegenstand) item);
+
+
+
             return true;
         }
 
@@ -72,6 +76,9 @@ public class Verleihsystem {
                 }
             }
             dienstleistungen.add((Dienstleistung) item);
+
+
+
             return true;
         }
 
@@ -143,84 +150,144 @@ public class Verleihsystem {
         return false;
     }
 
-    /**
+    /**Setzt einen Filter umd die Items die ausgeliehen werden können anzuzeigen
      * @param filterText
      * @param kategorie
      */
+    public void setCurrentFilterAusleihen(TextView filterText, User user, Kategorie kategorie) {
+            if (kategorie.equals(Kategorie.DIENSTLEISTUNG)) {
+                filterReturnNames = new String[0];
+                filterReturnPictureRes = new int[0];
+                filterReturnItemId = new int[0];
 
-    public void setCurrentFilter(TextView filterText, User user, Kategorie kategorie) {
-        int i = 0;
-        if (kategorie.equals(Kategorie.DIENSTLEISTUNG)) {
-            filterReturnNames = new String[dienstleistungen.size()];
-            filterReturnPictureRes = new int[dienstleistungen.size()];
-            filterReturnItemId = new int[dienstleistungen.size()];
+                for (Dienstleistung d : dienstleistungen) {
+                    if (d.isVerliehen()|| d.getOwner().equals(activeUser))
+                    {
 
-            for (Dienstleistung d : dienstleistungen) {
-                filterReturnItemId[i] = d.getId();
-                filterReturnNames[i] = d.getName();
-                filterReturnPictureRes[i] = d.getImageRessource();
-                i++;
-            }
+                    }
+                    else if (d.getName().contains(filterText.getText()))
+                    {
+                        filterReturnItemId = ArrayExt.add(filterReturnItemId, d.getId());
+                        filterReturnNames = ArrayExt.add(filterReturnNames, d.getName());
+                        filterReturnPictureRes = ArrayExt.add(filterReturnPictureRes, d.getImageRessource());
+
+                    }
+                }
         }
 
         if (kategorie.equals(Kategorie.GEGENSTAND)) {
-            filterReturnNames = new String[gegenstaende.size()];
-            filterReturnPictureRes = new int[gegenstaende.size()];
-            filterReturnItemId = new int[gegenstaende.size()];
+            filterReturnNames = new String[0];
+            filterReturnPictureRes = new int[0];
+            filterReturnItemId = new int[0];
 
             for (Gegenstand g : gegenstaende) {
-                filterReturnItemId[i] = g.getId();
-                filterReturnNames[i] = g.getName();
-                filterReturnPictureRes[i] = g.getImageRessource();
-                i++;
+                if (g.isVerliehen() || g.getOwner().equals(activeUser))
+                {
+
+                }
+                else if (g.getName().contains(filterText.getText()))
+                {
+                    filterReturnItemId = ArrayExt.add(filterReturnItemId, g.getId());
+                    filterReturnNames = ArrayExt.add(filterReturnNames, g.getName());
+                    filterReturnPictureRes = ArrayExt.add(filterReturnPictureRes, g.getImageRessource());
+                }
             }
         }
     }
 
+
     /**
-     * Hilfsmethode für Item Ausleih
-     *
+     * Gibt die Items in die Arrays die vom aktuellen Nutzer ausgelihen wurden
+     */
+    public void setCurrentFilterAusgeliehenVonMir()
+    {
+        filterReturnNames = new String[0];
+        filterReturnPictureRes = new int[0];
+        filterReturnItemId = new int[0];
+
+        for (Dienstleistung d : dienstleistungen) {
+
+            if (d.getAusgeliehenVon().equals(activeUser.getUserName()))
+            {
+                filterReturnItemId = ArrayExt.add(filterReturnItemId, d.getId());
+                filterReturnNames = ArrayExt.add(filterReturnNames, d.getName());
+                filterReturnPictureRes = ArrayExt.add(filterReturnPictureRes, d.getImageRessource());
+
+            }
+        }
+
+        for (Gegenstand g : gegenstaende) {
+            if (g.getAusgeliehenVon().equals(activeUser.getUserName()))
+            {
+                filterReturnItemId = ArrayExt.add(filterReturnItemId, g.getId());
+                filterReturnNames = ArrayExt.add(filterReturnNames, g.getName());
+                filterReturnPictureRes = ArrayExt.add(filterReturnPictureRes, g.getImageRessource());
+            }
+        }
+    }
+
+
+    public void setCurrentFilterMeineItems()
+    {
+        filterReturnNames = new String[0];
+        filterReturnPictureRes = new int[0];
+        filterReturnItemId = new int[0];
+
+        for (Dienstleistung d : dienstleistungen) {
+
+            if (d.getOwner().equals(activeUser.getUserName()))
+            {
+                filterReturnItemId = ArrayExt.add(filterReturnItemId, d.getId());
+                filterReturnNames = ArrayExt.add(filterReturnNames, d.getName());
+                filterReturnPictureRes = ArrayExt.add(filterReturnPictureRes, d.getImageRessource());
+
+            }
+        }
+
+        for (Gegenstand g : gegenstaende) {
+            if (g.getOwner().equals(activeUser.getUserName()))
+            {
+                filterReturnItemId = ArrayExt.add(filterReturnItemId, g.getId());
+                filterReturnNames = ArrayExt.add(filterReturnNames, g.getName());
+                filterReturnPictureRes = ArrayExt.add(filterReturnPictureRes, g.getImageRessource());
+            }
+        }
+    }
+
+
+    /**
+     * Item wird ausgeliehen
      * @param item Item für Ausleih wird übergeben
      */
-    private void itemAusleih(Item item) {
-        item.setVerliehen(true);
-        this.activeUser.setPointsMinus();
-        item.setAusgeliehenVon(this.activeUser);
-        this.activeUser.addGelieheneGegenstände(item);
-    }
-
-    /**
-     * Methode für das Ausleihen von Items
-     *
-     * @param item Item das AUsgeliehen werden sollte
-     */
-    public void itemVerleihen(Item item) {
-        item.setVerliehen(false);
-        this.activeUser.setPointsPlus();
-    }
-
-    /**
-     * Methode für das Ausleihen von Items
-     *
-     * @param item Das Auszuleihende Item sollte übergeben werden
-     */
     public void itemAusleihen(Item item) {
-        if (item.isVerliehen() == false && this.activeUser.getPoints() >= 1) {
-            itemAusleih(item);
+
+        // Wenn nochnicht ausgeliehen und user genügend Punkte hat
+        if (!item.isVerliehen() && activeUser.getPoints() > 0 )
+        {
+            item.setAusgeliehenVon(activeUser);
+            item.setVerliehen(true);
+            activeUser.setPointsMinus();
         }
 
     }
 
+
     /**
-     * Methode um geliehenen Gegenstand zurückzugeben
-     *
-     * @param item Item das zurückgegeben werden sollte muss übergeben werden
+     * Item wird zurückgegeben
+     * @param item
      */
     public void geliehenesItemZurückgeben(Item item) {
-        item.setVerliehen(false);
-        item.setAusgeliehenVon(null);
-        this.activeUser.deleteGelieheneGegenstände(item);
+
+        if(item.isVerliehen())
+        {
+            item.setVerliehen(false);
+            item.setAusgeliehenVon(null);
+            activeUser.setPointsPlus1();
+        }
     }
+
+
+
 
 
     //--Konstruktor---------------------------------------------------------------------------------

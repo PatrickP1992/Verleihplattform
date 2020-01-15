@@ -1,56 +1,53 @@
-package at.patrick.petzmann.verleihplattform;
+package at.patrick.petzmann.verleihplattform.VerleihenViews;
 
+import android.content.Intent;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ListView;
-import android.widget.TextView;
-
-import at.patrick.petzmann.verleihplattform.Klassen.ItemAdapter;
-import at.patrick.petzmann.verleihplattform.Klassen.Kategorie;
-import at.patrick.petzmann.verleihplattform.Klassen.Verleihsystem;
 import at.patrick.petzmann.verleihplattform.MenuViews.AGBsActivity;
 import at.patrick.petzmann.verleihplattform.MenuViews.MyAccountActivity;
 import at.patrick.petzmann.verleihplattform.MenuViews.NachrichtenActivity;
 import at.patrick.petzmann.verleihplattform.MenuViews.impressumActivity;
+import at.patrick.petzmann.verleihplattform.R;
+import at.patrick.petzmann.verleihplattform.VerleihenAusleihenActivity;
 
-public class AusleihenGegenstandActivity extends AppCompatActivity {
-
-    public Verleihsystem verleihsystem = Verleihsystem.getVerleihsystem();
-    public ListView myListView;
-    public TextView filterText;
+public class VerleihenActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_ausleihen_gegenstand);
-
-        filterText = findViewById(R.id.ausleihenGegenstandTextView);
-
-        verleihsystem.setCurrentFilter(filterText,verleihsystem.getActiveUser(),  Kategorie.GEGENSTAND);
-
-        myListView = findViewById(R.id.listViewGegenstand);
-        final ItemAdapter myAdapter = new ItemAdapter(this,verleihsystem.getFilterReturnItemId(),verleihsystem.getFilterReturnNames(),verleihsystem.getFilterReturnPictureRes());
-        myListView.setAdapter(myAdapter);
-
-        myListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent myIntent = new Intent(AusleihenGegenstandActivity.this,WillAusleihenActivity.class);
-                int[]ids = verleihsystem.getFilterReturnItemId();
-                myIntent.putExtra("itemId", ids[position]);
-                Verleihsystem.setVerleihsystem(verleihsystem); // verleihsystem wird gespeichert
-                startActivity(myIntent);
-            }
-        });
+        setContentView(R.layout.activity_verleihen);
     }
+
+    /**
+     * Wechselt zu VerleihGegenstand
+     * @param view
+     */
+    public void vGegenstand(View view){
+        Intent intent = new Intent(this, VerleihGegenstand.class);
+        startActivity(intent);
+    }
+
+
+    /**
+     * Wechselt zu VerleihDienstleistungActivity
+     * @param view
+     */
+    public void vDienstleistung(View view){
+        Intent intent2 = new Intent(this, VerleihDienstleistungActivity.class);
+        startActivity(intent2);
+    }
+
+    /**
+     * Verlinkt das Home-menü und arbeitet damit
+     * @param menu
+     * @return
+     */
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

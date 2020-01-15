@@ -1,4 +1,4 @@
-package at.patrick.petzmann.verleihplattform.Klassen;
+package at.patrick.petzmann.verleihplattform.Klassen.Other;
 
 import android.util.Log;
 

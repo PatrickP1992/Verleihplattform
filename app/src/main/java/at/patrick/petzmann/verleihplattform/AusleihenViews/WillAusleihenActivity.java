@@ -1,40 +1,77 @@
-package at.patrick.petzmann.verleihplattform;
+package at.patrick.petzmann.verleihplattform.AusleihenViews;
 
-import android.content.Intent;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import at.patrick.petzmann.verleihplattform.Klassen.System.Item;
+import at.patrick.petzmann.verleihplattform.Klassen.System.Verleihsystem;
 import at.patrick.petzmann.verleihplattform.MenuViews.AGBsActivity;
 import at.patrick.petzmann.verleihplattform.MenuViews.MyAccountActivity;
 import at.patrick.petzmann.verleihplattform.MenuViews.NachrichtenActivity;
 import at.patrick.petzmann.verleihplattform.MenuViews.impressumActivity;
+import at.patrick.petzmann.verleihplattform.R;
+import at.patrick.petzmann.verleihplattform.VerleihenAusleihenActivity;
 
-public class AngebotErstelltActivity extends AppCompatActivity {
+public class WillAusleihenActivity extends AppCompatActivity {
 
+    public Verleihsystem verleihsystem = Verleihsystem.getVerleihsystem();
+    public Item toShow;
+    TextView name;
+    TextView adresse;
+    TextView plz;
+    TextView ort;
+    TextView von;
+    TextView bis;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_angebot_erstellt);
+        setContentView(R.layout.activity_will_ausleihen);
+        Toast message;
 
-        Intent intent = getIntent();
-        Bundle b = intent.getExtras();
+        name = findViewById(R.id.textViewWillAusleihenName);
+        adresse = findViewById(R.id.TextViewWillAusleihenAdresse);
+        plz = findViewById(R.id.textViewWillAusleihenPlz);
+        ort = findViewById(R.id.textViewWillAusleihenOrt);
+        von = findViewById(R.id.textViewWillAusleihenVon);
+        bis = findViewById(R.id.textViewWillAusleihenBis);
 
-        TextView erstellt = findViewById(R.id.textView_AngebotErstellt);
+        Bundle myBundle = getIntent().getExtras();
+        if (myBundle!=null)
+        {
+            int i = myBundle.getInt("itemId");
+            String s = Integer.toString(i);
+            message = Toast.makeText(getApplicationContext(),s, Toast.LENGTH_SHORT);
+            message.show();
 
-        if (b != null) {
-            String name = (String) b.get("name");
-            erstellt.setText("Das Angebot über " + name + " wurde erstellt");
+            toShow = verleihsystem.returnItemById(i);
+            showItem();
         }
+
     }
 
-    public void backToHome(View view) {
-        Intent intent = new Intent(this, VerleihenAusleihenActivity.class);
+    public void showItem()
+    {
+        name.setText(toShow.getName());
+        adresse.setText(toShow.getAdresse());
+        plz.setText(toShow.getPlz());
+        ort.setText(toShow.getOrt());
+    }
 
+    public void ausleihenItem(View view){
+        this.verleihsystem.itemAusleihen(toShow);
+        Verleihsystem.setVerleihsystem(verleihsystem); // verleihsystem wird gespeichert
+        Toast message = Toast.makeText(getApplicationContext(), "Anfrage erstellt", Toast.LENGTH_SHORT);
+        message.show();
+        Intent intent = new Intent(this, VerleihenAusleihenActivity.class);
         startActivity(intent);
     }
 

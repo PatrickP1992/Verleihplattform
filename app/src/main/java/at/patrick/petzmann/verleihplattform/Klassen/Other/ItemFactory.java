@@ -1,9 +1,15 @@
-package at.patrick.petzmann.verleihplattform.Klassen;
+package at.patrick.petzmann.verleihplattform.Klassen.Other;
 
 import java.util.Date;
 
+import at.patrick.petzmann.verleihplattform.Klassen.System.Dienstleistung;
+import at.patrick.petzmann.verleihplattform.Klassen.System.Gegenstand;
+import at.patrick.petzmann.verleihplattform.Klassen.System.Item;
+import at.patrick.petzmann.verleihplattform.Klassen.System.Kategorie;
+import at.patrick.petzmann.verleihplattform.Klassen.System.User;
+
 public class ItemFactory {
-    private static int id = 0;
+    private static int id = 1;
 
 
     /**

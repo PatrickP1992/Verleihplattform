@@ -1,4 +1,4 @@
-package at.patrick.petzmann.verleihplattform.Klassen;
+package at.patrick.petzmann.verleihplattform.Klassen.Other;
 
 import android.icu.text.SimpleDateFormat;
 import android.os.Build;
@@ -37,5 +37,8 @@ public class Methods {
     public static boolean matches(String date) {
         return DATE_PATTERN.matcher(date).matches();
     }
+
+
+
 
 }

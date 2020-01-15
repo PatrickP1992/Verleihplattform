@@ -10,33 +10,24 @@ import android.widget.ListView;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import at.patrick.petzmann.verleihplattform.AusleihenDienstleistungActivity;
-import at.patrick.petzmann.verleihplattform.Klassen.ItemAdapter;
-import at.patrick.petzmann.verleihplattform.Klassen.Verleihsystem;
+
+import at.patrick.petzmann.verleihplattform.Klassen.Other.ItemAdapter;
+import at.patrick.petzmann.verleihplattform.Klassen.System.Verleihsystem;
+import at.patrick.petzmann.verleihplattform.MenuViews.MyAccount.MeineItemsActivity;
+import at.patrick.petzmann.verleihplattform.MenuViews.MyAccount.VonMirAusgeliehenActivity;
 import at.patrick.petzmann.verleihplattform.R;
 import at.patrick.petzmann.verleihplattform.VerleihenAusleihenActivity;
-import at.patrick.petzmann.verleihplattform.WillAusleihenActivity;
 
 public class MyAccountActivity extends AppCompatActivity {
 
-    ListView myListView;
+
     Verleihsystem verleihsystem = Verleihsystem.getVerleihsystem();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_account);
 
-        if(verleihsystem.getActiveUser().getGelieheneItems().size()!=0){myListView = findViewById(R.id.listViewAusgeliehen);
-        final ItemAdapter myAdapter = new ItemAdapter(this, this.verleihsystem.getActiveUser().getIdNumber(),verleihsystem.getActiveUser().getItemName(),verleihsystem.getActiveUser().getPictureCode());
-        myListView.setAdapter(myAdapter);
 
-        myListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                int[]ids = verleihsystem.getFilterReturnItemId();
-                Verleihsystem.setVerleihsystem(verleihsystem); // verleihsystem wird gespeichert
-            }
-        });}
     }
 
     /**
@@ -46,30 +37,30 @@ public class MyAccountActivity extends AppCompatActivity {
      */
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.accountmenu, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        Intent intent;
-        switch(item.getItemId()){
-            case R.id.home:
-                intent = new Intent(this, VerleihenAusleihenActivity.class);
-                startActivity(intent);
+            public boolean onCreateOptionsMenu(Menu menu) {
+                MenuInflater inflater = getMenuInflater();
+                inflater.inflate(R.menu.accountmenu, menu);
                 return true;
+            }
 
-            case R.id.messages:
-                intent = new Intent(this, NachrichtenActivity.class);
-                startActivity(intent);
-                return true;
+            @Override
+            public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+                Intent intent;
+                switch(item.getItemId()){
+                    case R.id.home:
+                        intent = new Intent(this, VerleihenAusleihenActivity.class);
+                        startActivity(intent);
+                        return true;
 
-            case R.id.AGB:
-                intent = new Intent(this, AGBsActivity.class);
-                startActivity(intent);
-                return true;
+                    case R.id.messages:
+                        intent = new Intent(this, NachrichtenActivity.class);
+                        startActivity(intent);
+                        return true;
+
+                    case R.id.AGB:
+                        intent = new Intent(this, AGBsActivity.class);
+                        startActivity(intent);
+                        return true;
 
             case R.id.impressum:
                 intent = new Intent(this , impressumActivity.class);
@@ -78,5 +69,26 @@ public class MyAccountActivity extends AppCompatActivity {
 
             default:  return super.onOptionsItemSelected(item);
         }
+    }
+
+
+    /**
+     * wechselt zu MeineItemsActivity
+     *
+     * @param view
+     */
+    public void meineItems(View view) {
+        Intent intent = new Intent(this, MeineItemsActivity.class);
+        startActivity(intent);
+    }
+
+    /**
+     * wechselt zu VonMirAusgeliehenActivity
+     *
+     * @param view
+     */
+    public void vonMirAusgeliehen(View view) {
+        Intent intent = new Intent(this, VonMirAusgeliehenActivity.class);
+        startActivity(intent);
     }
 }

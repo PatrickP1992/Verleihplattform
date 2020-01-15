@@ -1,4 +1,4 @@
-package at.patrick.petzmann.verleihplattform;
+package at.patrick.petzmann.verleihplattform.VerleihenViews;
 
 import android.content.Intent;
 import android.os.Build;
@@ -18,13 +18,15 @@ import android.widget.TextView;
 import java.text.ParseException;
 import java.util.Date;
 
-import at.patrick.petzmann.verleihplattform.Klassen.Kategorie;
-import at.patrick.petzmann.verleihplattform.Klassen.Methods;
-import at.patrick.petzmann.verleihplattform.Klassen.Verleihsystem;
+import at.patrick.petzmann.verleihplattform.Klassen.System.Kategorie;
+import at.patrick.petzmann.verleihplattform.Klassen.Other.Methods;
+import at.patrick.petzmann.verleihplattform.Klassen.System.Verleihsystem;
 import at.patrick.petzmann.verleihplattform.MenuViews.AGBsActivity;
 import at.patrick.petzmann.verleihplattform.MenuViews.MyAccountActivity;
 import at.patrick.petzmann.verleihplattform.MenuViews.NachrichtenActivity;
 import at.patrick.petzmann.verleihplattform.MenuViews.impressumActivity;
+import at.patrick.petzmann.verleihplattform.R;
+import at.patrick.petzmann.verleihplattform.VerleihenAusleihenActivity;
 
 public class VerleihGegenstand extends AppCompatActivity {
 

@@ -1,44 +1,43 @@
-package at.patrick.petzmann.verleihplattform;
+package at.patrick.petzmann.verleihplattform.VerleihenViews;
 
+import android.content.Intent;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
+import android.widget.TextView;
 import at.patrick.petzmann.verleihplattform.MenuViews.AGBsActivity;
 import at.patrick.petzmann.verleihplattform.MenuViews.MyAccountActivity;
 import at.patrick.petzmann.verleihplattform.MenuViews.NachrichtenActivity;
 import at.patrick.petzmann.verleihplattform.MenuViews.impressumActivity;
+import at.patrick.petzmann.verleihplattform.R;
+import at.patrick.petzmann.verleihplattform.VerleihenAusleihenActivity;
 
-public class AusleihenActivity extends AppCompatActivity {
+public class AngebotErstelltActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_ausleihen);
+        setContentView(R.layout.activity_angebot_erstellt);
+
+        Intent intent = getIntent();
+        Bundle b = intent.getExtras();
+
+        TextView erstellt = findViewById(R.id.textView_AngebotErstellt);
+
+        if (b != null) {
+            String name = (String) b.get("name");
+            erstellt.setText("Das Angebot über " + name + " wurde erstellt");
+        }
     }
 
-    /**
-     * Wechselt zu AusleihenGegenstandActivity
-     * @param view
-     */
-    public void aGegenstand(View view){
-        Intent intent = new Intent(this, AusleihenGegenstandActivity.class);
+    public void backToHome(View view) {
+        Intent intent = new Intent(this, VerleihenAusleihenActivity.class);
+
         startActivity(intent);
-    }
-
-
-    /**
-     * Wechselt zu AusleihenDienstleistungActivity
-     * @param view
-     */
-    public void aDienstleistung(View view){
-        Intent intent2 = new Intent(this, AusleihenDienstleistungActivity.class);
-        startActivity(intent2);
     }
 
     /**

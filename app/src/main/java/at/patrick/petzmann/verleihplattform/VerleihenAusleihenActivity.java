@@ -8,11 +8,14 @@ import android.view.MenuItem;
 import android.view.View;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import at.patrick.petzmann.verleihplattform.Klassen.Verleihsystem;
+
+import at.patrick.petzmann.verleihplattform.AusleihenViews.AusleihenActivity;
+import at.patrick.petzmann.verleihplattform.Klassen.System.Verleihsystem;
 import at.patrick.petzmann.verleihplattform.MenuViews.AGBsActivity;
 import at.patrick.petzmann.verleihplattform.MenuViews.MyAccountActivity;
 import at.patrick.petzmann.verleihplattform.MenuViews.NachrichtenActivity;
 import at.patrick.petzmann.verleihplattform.MenuViews.impressumActivity;
+import at.patrick.petzmann.verleihplattform.VerleihenViews.VerleihenActivity;
 
 public class VerleihenAusleihenActivity extends AppCompatActivity {
 

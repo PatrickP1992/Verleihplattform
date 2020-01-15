@@ -72,9 +72,8 @@ public class WillAusleihenActivity extends AppCompatActivity {
 
         {
             // Punkte werden um 5 erhöht
-            verleihsystem.getActiveUser().setPointsPlus5();
 
-            Toast message2 = Toast.makeText(getApplicationContext(), "Anfrage erstellt und Punkte wurden erhöht", Toast.LENGTH_SHORT);
+            Toast message2 = Toast.makeText(getApplicationContext(), "Anfrage erstellt und ein Punkt wurde abgezogen", Toast.LENGTH_SHORT);
             message2.show();
 
         }

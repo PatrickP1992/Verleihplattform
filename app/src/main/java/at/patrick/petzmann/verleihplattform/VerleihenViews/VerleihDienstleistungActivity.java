@@ -94,6 +94,7 @@ public class VerleihDienstleistungActivity extends AppCompatActivity {
         intent.putExtra("name", name);
         if (!name.isEmpty() && !adresse.isEmpty() && !plz.isEmpty() && !ort.isEmpty() && dateIsTrue && rightDate) {
             if (verleihsystem.createItem(verleihsystem.getActiveUser(), name, adresse, plz, ort, vonDatum, bisDatum, Kategorie.DIENSTLEISTUNG)) {
+                verleihsystem.getActiveUser().setPointsPlus5();
                 Verleihsystem.setVerleihsystem(verleihsystem); // verleihsystem wird gespeichert
                 startActivity(intent);
             }

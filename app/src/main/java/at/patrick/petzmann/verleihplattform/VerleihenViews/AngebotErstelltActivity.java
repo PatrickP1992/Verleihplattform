@@ -31,6 +31,7 @@ public class AngebotErstelltActivity extends AppCompatActivity {
         if (b != null) {
             String name = (String) b.get("name");
             erstellt.setText("Das Angebot über " + name + " wurde erstellt");
+
         }
     }
 

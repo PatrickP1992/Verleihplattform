@@ -181,6 +181,7 @@ public class Verleihsystem {
             item.setVerliehen(true);
             this.activeUser.setPointsMinus();
             item.setAusgeliehenVon(this.activeUser);
+            this.activeUser.addGelieheneGegenstände(item);
         } else {
             //to-do gib Error aus dass User zu wenige Punkte hat.
         }
@@ -202,6 +203,7 @@ public class Verleihsystem {
     public void geliehenenGegenstandZurückgeben(Item item) {
         item.setVerliehen(false);
         item.setAusgeliehenVon(null);
+        this.activeUser.deleteGelieheneGegenstände(item);
     }
 
 

@@ -9,6 +9,7 @@ public class User {
     private String userName;
     private String password;
     private int points;
+    private ArrayList<Item> gelieheneGegenstände;
 
     // --Konstruktor----------------------------------------------------
     public User(int id, String userName, String password) {
@@ -16,6 +17,7 @@ public class User {
         this.userName = userName;
         this.password = password;
         this.points = 5;
+        gelieheneGegenstände = new ArrayList<>();
     }
 
     //--Getter und Setter----------------------------------------------
@@ -52,6 +54,30 @@ public class User {
             this.points--;
         }
 
+    }
+
+    public ArrayList<Item> getGelieheneGegenstände() {
+        return gelieheneGegenstände;
+    }
+
+    public void addGelieheneGegenstände(Item item) {
+        for (Item i:gelieheneGegenstände) {
+            if(i.getId() == item.getId()){
+                // to-do Error Message dass gegenstand schon in der liste ist.
+                return;
+            }
+        }
+        this.gelieheneGegenstände.add(item);
+    }
+
+    public void deleteGelieheneGegenstände(Item item){
+        for (Item i:gelieheneGegenstände) {
+            if(i.getId() == item.getId()){
+                gelieheneGegenstände.remove(item);
+                return;
+            }
+        }
+        //to-do error message dass element nicht in der Liste ist
     }
 
 }

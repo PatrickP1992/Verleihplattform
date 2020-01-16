@@ -21,6 +21,8 @@ import at.patrick.petzmann.verleihplattform.Klassen.Other.ItemFactory;
 import at.patrick.petzmann.verleihplattform.Klassen.System.Kategorie;
 import at.patrick.petzmann.verleihplattform.Klassen.System.User;
 import at.patrick.petzmann.verleihplattform.Klassen.System.Verleihsystem;
+import at.patrick.petzmann.verleihplattform.MenuViews.MyAccountActivity;
+import at.patrick.petzmann.verleihplattform.MenuViews.registerActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -73,9 +75,11 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        Intent intent;
         switch(item.getItemId()){
             case R.id.register:
-                Toast.makeText(this, "Account registrieren ausgewählt", Toast.LENGTH_SHORT).show();
+                intent = new Intent(this, registerActivity.class);
+                startActivity(intent);
                 return true;
 
             default:  return super.onOptionsItemSelected(item);

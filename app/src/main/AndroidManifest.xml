@@ -1,102 +1,104 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:dist="http://schemas.android.com/apk/distribution"
-    package="at.patrick.petzmann.verleihplattform">
+          xmlns:dist="http://schemas.android.com/apk/distribution"
+          package="at.patrick.petzmann.verleihplattform">
 
-    <dist:module dist:instant="true" />
+    <dist:module dist:instant="true"/>
 
     <application
-        android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
-        android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".MenuViews.MyAccount.ZurueckgebenActivity"></activity>
-        <activity android:name=".MenuViews.MyAccount.MeinItemVerwaltenActivity" />
-        <activity android:name=".MenuViews.MyAccount.MeineItemsActivity" />
-        <activity android:name=".MenuViews.MyAccount.VonMirAusgeliehenActivity" />
-        <activity android:name=".MenuViews.impressumActivity" />
-        <activity android:name=".MenuViews.NachrichtenActivity" />
-        <activity android:name=".MenuViews.AGBsActivity" />
-        <activity android:name=".MenuViews.MyAccountActivity" />
-        <activity android:name=".AusleihenViews.WillAusleihenActivity" />
-        <activity android:name=".VerleihenViews.AngebotErstelltActivity" />
+            android:allowBackup="true"
+            android:icon="@mipmap/ic_launcher"
+            android:label="@string/app_name"
+            android:roundIcon="@mipmap/ic_launcher_round"
+            android:supportsRtl="true"
+            android:theme="@style/AppTheme">
+        <activity android:name=".MenuViews.registerActivity">
+        </activity>
+        <activity android:name=".MenuViews.MyAccount.ZurueckgebenActivity"/>
+        <activity android:name=".MenuViews.MyAccount.MeinItemVerwaltenActivity"/>
+        <activity android:name=".MenuViews.MyAccount.MeineItemsActivity"/>
+        <activity android:name=".MenuViews.MyAccount.VonMirAusgeliehenActivity"/>
+        <activity android:name=".MenuViews.impressumActivity"/>
+        <activity android:name=".MenuViews.NachrichtenActivity"/>
+        <activity android:name=".MenuViews.AGBsActivity"/>
+        <activity android:name=".MenuViews.MyAccountActivity"/>
+        <activity android:name=".AusleihenViews.WillAusleihenActivity"/>
+        <activity android:name=".VerleihenViews.AngebotErstelltActivity"/>
         <activity
-            android:name=".AusleihenViews.AusleihenDienstleistungActivity"
-            android:parentActivityName=".AusleihenViews.AusleihenActivity">
+                android:name=".AusleihenViews.AusleihenDienstleistungActivity"
+                android:parentActivityName=".AusleihenViews.AusleihenActivity">
 
             <!-- The meta-data tag is required if you support API level 15 and lower -->
             <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".AusleihenViews.AusleihenActivity" />
+                    android:name="android.support.PARENT_ACTIVITY"
+                    android:value=".AusleihenViews.AusleihenActivity"/>
             >
         </activity>
         <activity
-            android:name=".AusleihenViews.AusleihenGegenstandActivity"
-            android:parentActivityName=".AusleihenViews.AusleihenActivity">
+                android:name=".AusleihenViews.AusleihenGegenstandActivity"
+                android:parentActivityName=".AusleihenViews.AusleihenActivity">
 
             <!-- The meta-data tag is required if you support API level 15 and lower -->
             <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".AusleihenViews.AusleihenActivity" />
+                    android:name="android.support.PARENT_ACTIVITY"
+                    android:value=".AusleihenViews.AusleihenActivity"/>
             >
         </activity>
         <activity
-            android:name=".VerleihenViews.VerleihDienstleistungActivity"
-            android:parentActivityName=".VerleihenViews.VerleihenActivity">
+                android:name=".VerleihenViews.VerleihDienstleistungActivity"
+                android:parentActivityName=".VerleihenViews.VerleihenActivity">
 
             <!-- The meta-data tag is required if you support API level 15 and lower -->
             <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".VerleihenViews.VerleihenActivity" />
+                    android:name="android.support.PARENT_ACTIVITY"
+                    android:value=".VerleihenViews.VerleihenActivity"/>
             >
         </activity>
         <activity
-            android:name=".VerleihenViews.VerleihGegenstand"
-            android:parentActivityName=".VerleihenViews.VerleihenActivity">
+                android:name=".VerleihenViews.VerleihGegenstand"
+                android:parentActivityName=".VerleihenViews.VerleihenActivity">
 
             <!-- The meta-data tag is required if you support API level 15 and lower -->
             <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".VerleihenViews.VerleihenActivity" />
+                    android:name="android.support.PARENT_ACTIVITY"
+                    android:value=".VerleihenViews.VerleihenActivity"/>
             >
         </activity>
         <activity
-            android:name=".VerleihenViews.VerleihenActivity"
-            android:parentActivityName=".VerleihenAusleihenActivity">
+                android:name=".VerleihenViews.VerleihenActivity"
+                android:parentActivityName=".VerleihenAusleihenActivity">
 
             <!-- The meta-data tag is required if you support API level 15 and lower -->
             <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".VerleihenAusleihenActivity" />
+                    android:name="android.support.PARENT_ACTIVITY"
+                    android:value=".VerleihenAusleihenActivity"/>
             >
         </activity>
         <activity
-            android:name=".AusleihenViews.AusleihenActivity"
-            android:parentActivityName=".VerleihenAusleihenActivity">
+                android:name=".AusleihenViews.AusleihenActivity"
+                android:parentActivityName=".VerleihenAusleihenActivity">
 
             <!-- The meta-data tag is required if you support API level 15 and lower -->
             <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".VerleihenAusleihenActivity" />
+                    android:name="android.support.PARENT_ACTIVITY"
+                    android:value=".VerleihenAusleihenActivity"/>
             >
         </activity>
         <activity
-            android:name=".VerleihenAusleihenActivity"
-            android:parentActivityName=".MainActivity">
+                android:name=".VerleihenAusleihenActivity"
+                android:parentActivityName=".MainActivity">
 
             <!-- The meta-data tag is required if you support API level 15 and lower -->
             <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
+                    android:name="android.support.PARENT_ACTIVITY"
+                    android:value=".MainActivity"/>
             >
         </activity>
         <activity android:name=".MainActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
     </application>

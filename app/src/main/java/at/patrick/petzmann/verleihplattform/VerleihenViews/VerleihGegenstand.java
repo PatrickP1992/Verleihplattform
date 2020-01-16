@@ -97,8 +97,7 @@ public class VerleihGegenstand extends AppCompatActivity {
                 Verleihsystem.setVerleihsystem(verleihsystem); // verleihsystem wird gespeichert
                 startActivity(intent);
             }
-        } else if (name.isEmpty() || adresse.isEmpty() || plz.isEmpty() || ort.isEmpty() || vonDatumString.isEmpty() || bisDatumString.isEmpty())
-        {
+        } else if (name.isEmpty() || adresse.isEmpty() || plz.isEmpty() || ort.isEmpty() || vonDatumString.isEmpty() || bisDatumString.isEmpty()) {
             Toast message = Toast.makeText(getApplicationContext(), "Bitte alle Daten eingeben!", Toast.LENGTH_SHORT);
             message.show();
         } else if (!dateIsTrue) {
@@ -124,7 +123,7 @@ public class VerleihGegenstand extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         Intent intent;
-        switch(item.getItemId()){
+        switch (item.getItemId()) {
             case R.id.home:
                 intent = new Intent(this, VerleihenAusleihenActivity.class);
                 startActivity(intent);
@@ -146,11 +145,12 @@ public class VerleihGegenstand extends AppCompatActivity {
                 return true;
 
             case R.id.impressum:
-                intent = new Intent(this , impressumActivity.class);
+                intent = new Intent(this, impressumActivity.class);
                 startActivity(intent);
                 return true;
 
-            default:  return super.onOptionsItemSelected(item);
+            default:
+                return super.onOptionsItemSelected(item);
         }
     }
 }

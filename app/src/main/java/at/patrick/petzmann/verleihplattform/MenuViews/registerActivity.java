@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.text.method.ScrollingMovementMethod;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import at.patrick.petzmann.verleihplattform.Klassen.System.User;
@@ -46,6 +47,8 @@ public class registerActivity extends AppCompatActivity {
 
 
         if (!username.isEmpty() && password.matches(passwordMatches)){
+            Toast message = Toast.makeText(getApplicationContext(), "Account erfolgreich registriert!", Toast.LENGTH_SHORT);
+            message.show();
 
             startActivity(intent);
         }

@@ -42,26 +42,32 @@ public class registerActivity extends AppCompatActivity {
         TextView passwortTextView = findViewById(R.id.password_editText);
         TextView passwort2Textview = findViewById(R.id.password2_editText);
 
-        String username = usernameTextView.toString();
-        String password = passwortTextView.toString();
-        String passwordMatches = passwort2Textview.toString();
+        String vorname = vornameTextView.getText().toString();
+        String nachname = nachnameTextView.getText().toString();
+        String username = usernameTextView.getText().toString();
+        String adresse = adresseTextView.getText().toString();
+        String plz = plzTextView.getText().toString();
+        String ort = ortTextView.getText().toString();
+        String password = passwortTextView.getText().toString();
+        String passwordMatches = passwort2Textview.getText().toString();
 
-        boolean passwordRegex = Methods.correctPassword(password);
+        boolean passwordRegex = Methods.PASSWORD_PATTERN(password);
+        boolean everythingEntered = Methods.FILLED_REGISTER(vorname, nachname, username, adresse, plz, ort, password, passwordMatches);
 
 
-        if (!username.isEmpty() && password == passwordMatches && passwordRegex) {
+        if (everythingEntered && password.equals(passwordMatches) && passwordRegex) {
             Toast message = Toast.makeText(getApplicationContext(), "Account erfolgreich registriert!", Toast.LENGTH_SHORT);
             message.show();
 
             //startActivity(intent);
-        } else if (username.isEmpty() || password.isEmpty() || passwordMatches.isEmpty()) {
+        } else if (!everythingEntered) {
             Toast message = Toast.makeText(getApplicationContext(), "Bitte alle Daten eingeben!", Toast.LENGTH_SHORT);
             message.show();
-        } else if (password != passwordMatches) { //funktioniert noch nicht richtig
-            Toast message = Toast.makeText(getApplicationContext(), "Passwörter stimmen nicht überein!", Toast.LENGTH_SHORT);
-            message.show();
-        } else if (!passwordRegex) { //problem mit regex
+        } else if (!passwordRegex) {
             Toast message = Toast.makeText(getApplicationContext(), "Passwort soll mindestens 8 Zeichen, 1 Groß/Kleinbuchstaben, 1 Zahl und 1 Sonderzeichen enthalten!", Toast.LENGTH_SHORT);
+            message.show();
+        } else if (password!=passwordMatches) {
+            Toast message = Toast.makeText(getApplicationContext(), "Passwörter stimmen nicht überein!", Toast.LENGTH_SHORT);
             message.show();
         } else {
             Toast message = Toast.makeText(getApplicationContext(), "Sonstiger Fehler", Toast.LENGTH_SHORT);

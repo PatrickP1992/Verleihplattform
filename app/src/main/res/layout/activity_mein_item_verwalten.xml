@@ -6,4 +6,125 @@
     android:layout_height="match_parent"
     tools:context=".MenuViews.MyAccount.MeinItemVerwaltenActivity">
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textAlignment="textStart"
+        tools:context=".AusleihenViews.WillAusleihenActivity"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp" >
+
+        <TextView
+            android:id="@+id/textViewMeinItemPlz"
+            android:layout_width="83dp"
+            android:layout_height="42dp"
+            android:completionHint="Select an Item"
+            android:completionThreshold="1"
+            android:gravity="center"
+            android:text="@string/editText_PLZVDienst"
+            android:textAlignment="viewStart"
+            android:textSize="30sp"
+            tools:layout_editor_absoluteX="80dp"
+            tools:layout_editor_absoluteY="211dp" />
+
+        <TextView
+            android:id="@+id/textViewMeinItemOrt"
+            android:layout_width="149dp"
+            android:layout_height="41dp"
+            android:completionHint="Select an Item"
+            android:completionThreshold="1"
+            android:gravity="center"
+            android:text="@string/VDienstOrtAutoTextView"
+            android:textAlignment="viewStart"
+            android:textSize="30sp"
+            tools:layout_editor_absoluteX="180dp"
+            tools:layout_editor_absoluteY="211dp" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/textViewMeinItemName"
+        android:layout_width="250dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="16dp"
+        android:completionHint="Select an Item"
+        android:completionThreshold="1"
+        android:editable="false"
+        android:gravity="center"
+        android:text="Name"
+        android:textAlignment="textStart"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewMeinItemAdresse"
+        android:layout_width="250dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="104dp"
+        android:layout_marginEnd="16dp"
+        android:completionHint="Select an Item"
+        android:completionThreshold="1"
+        android:gravity="center"
+        android:text="@string/editText_AdresseVDienst"
+        android:textAlignment="textStart"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewMeinItemVon"
+        android:layout_width="250dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="284dp"
+        android:layout_marginEnd="16dp"
+        android:completionHint="Select an Item"
+        android:completionThreshold="1"
+        android:gravity="center"
+        android:text="@string/editText_VDienstDatumVon"
+        android:textAlignment="viewStart"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewMeinItemBis"
+        android:layout_width="250dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="356dp"
+        android:layout_marginEnd="16dp"
+        android:completionHint="Select an Item"
+        android:completionThreshold="1"
+        android:gravity="center"
+        android:text="@string/editText_VDienstDatumBis"
+        android:textAlignment="viewStart"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/buttonLoeschen"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="476dp"
+        android:layout_marginEnd="16dp"
+        android:onClick="loeschenItem"
+        android:text="löschen"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.767"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

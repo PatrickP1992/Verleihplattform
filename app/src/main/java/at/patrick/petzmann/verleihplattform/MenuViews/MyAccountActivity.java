@@ -10,6 +10,7 @@ import android.widget.ListView;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.TextView;
 
 import at.patrick.petzmann.verleihplattform.Klassen.Other.ItemAdapter;
 import at.patrick.petzmann.verleihplattform.Klassen.System.Verleihsystem;
@@ -22,11 +23,15 @@ public class MyAccountActivity extends AppCompatActivity {
 
 
     Verleihsystem verleihsystem = Verleihsystem.getVerleihsystem();
+    TextView punkte;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_account);
 
+        punkte = findViewById(R.id.textViewPunkte);
+
+        punkte.setText(Integer.toString(verleihsystem.getActiveUser().getPoints()));
 
     }
 

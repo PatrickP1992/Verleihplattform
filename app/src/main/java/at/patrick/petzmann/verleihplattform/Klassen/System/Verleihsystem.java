@@ -285,18 +285,43 @@ public class Verleihsystem {
      * Item wird zurückgegeben
      * @param item
      */
-    public void geliehenesItemZurückgeben(Item item) {
+    public boolean geliehenesItemZurückgeben(Item item) {
 
         if(item.isVerliehen())
         {
             item.setVerliehen(false);
             item.setAusgeliehenVon(new User(-1,"-1","-1")); // Wird zurückgesetzt
             activeUser.setPointsPlus1();
+            return true;
         }
+        return false;
     }
 
 
 
+
+    public boolean itemLoeschen(int id)
+    {
+        for (Dienstleistung d:dienstleistungen) {
+            if(d.getId()==id)
+            {
+                dienstleistungen.remove(d);
+                return true;
+            }
+        }
+
+
+        for (Gegenstand g:gegenstaende) {
+            if(g.getId()==id)
+            {
+                gegenstaende.remove(g);
+                return true;
+            }
+        }
+
+
+        return false;
+    }
 
 
     //--Konstruktor---------------------------------------------------------------------------------

@@ -71,7 +71,7 @@ public class WillAusleihenActivity extends AppCompatActivity {
         if (verleihsystem.itemAusleihen(toShow))
 
         {
-            // Punkte werden um 5 erhöht
+
 
             Toast message2 = Toast.makeText(getApplicationContext(), "Anfrage erstellt und ein Punkt wurde abgezogen", Toast.LENGTH_SHORT);
             message2.show();

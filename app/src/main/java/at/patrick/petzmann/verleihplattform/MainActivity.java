@@ -114,32 +114,32 @@ public class MainActivity extends AppCompatActivity {
 
 
             //----Dienstleistungen hinzufügen----------------------------------------------------------------------
-            verleihsystem.createItem(patrick,"Nachhilfe in Mathe","UNI","9020","Klagenfurt",new Date(),new Date(), Kategorie.DIENSTLEISTUNG);
-            verleihsystem.createItem(patrick,"Name","Adresse","plz","Ort",new Date(),new Date(), Kategorie.DIENSTLEISTUNG);
-            verleihsystem.createItem(patrick,"Name","Adresse","plz","Ort",new Date(),new Date(), Kategorie.DIENSTLEISTUNG);
-            verleihsystem.createItem(patrick,"Name","Adresse","plz","Ort",new Date(),new Date(), Kategorie.DIENSTLEISTUNG);
-            verleihsystem.createItem(patrick,"Name","Adresse","plz","Ort",new Date(),new Date(), Kategorie.DIENSTLEISTUNG);
-            verleihsystem.createItem(patrick,"Name","Adresse","plz","Ort",new Date(),new Date(), Kategorie.DIENSTLEISTUNG);
-            verleihsystem.createItem(patrick,"Name","Adresse","plz","Ort",new Date(),new Date(), Kategorie.DIENSTLEISTUNG);
-            verleihsystem.createItem(patrick,"Name","Adresse","plz","Ort",new Date(),new Date(), Kategorie.DIENSTLEISTUNG);
-            verleihsystem.createItem(patrick,"Name","Adresse","plz","Ort",new Date(),new Date(), Kategorie.DIENSTLEISTUNG);
-            verleihsystem.createItem(patrick,"Name","Adresse","plz","Ort",new Date(),new Date(), Kategorie.DIENSTLEISTUNG);
-            verleihsystem.createItem(patrick,"Name","Adresse","plz","Ort",new Date(),new Date(), Kategorie.DIENSTLEISTUNG);
-            verleihsystem.createItem(patrick,"Name","Adresse","plz","Ort",new Date(),new Date(), Kategorie.DIENSTLEISTUNG);
+            verleihsystem.createItem(patrick,"Nachhilfe in Mathe","Wölzing 95","9433","St.Andrä",new Date(),new Date(), Kategorie.DIENSTLEISTUNG);
+            verleihsystem.createItem(patrick,"Babysitten","Wölzing 95","9433","St.Andrä",new Date(),new Date(), Kategorie.DIENSTLEISTUNG);
+            verleihsystem.createItem(patrick,"Nachhilfe in Informatik","Wölzing 95","9433","St.Andrä",new Date(),new Date(), Kategorie.DIENSTLEISTUNG);
+            verleihsystem.createItem(stefan,"Name","Adresse","plz","Ort",new Date(),new Date(), Kategorie.DIENSTLEISTUNG);
+            verleihsystem.createItem(stefan,"Name","Adresse","plz","Ort",new Date(),new Date(), Kategorie.DIENSTLEISTUNG);
+            verleihsystem.createItem(stefan,"Name","Adresse","plz","Ort",new Date(),new Date(), Kategorie.DIENSTLEISTUNG);
+            verleihsystem.createItem(emanuel,"Name","Adresse","plz","Ort",new Date(),new Date(), Kategorie.DIENSTLEISTUNG);
+            verleihsystem.createItem(emanuel,"Name","Adresse","plz","Ort",new Date(),new Date(), Kategorie.DIENSTLEISTUNG);
+            verleihsystem.createItem(emanuel,"Name","Adresse","plz","Ort",new Date(),new Date(), Kategorie.DIENSTLEISTUNG);
+            verleihsystem.createItem(christian,"Name","Adresse","plz","Ort",new Date(),new Date(), Kategorie.DIENSTLEISTUNG);
+            verleihsystem.createItem(christian,"Name","Adresse","plz","Ort",new Date(),new Date(), Kategorie.DIENSTLEISTUNG);
+            verleihsystem.createItem(christian,"Name","Adresse","plz","Ort",new Date(),new Date(), Kategorie.DIENSTLEISTUNG);
 
 
             //----Gegenstände hinzufügen----------------------------------------------------------------------------
-            verleihsystem.createItem(patrick,"Taschenrechner","Uni","9020","KLagenfurt",new Date(),new Date(), Kategorie.GEGENSTAND);
-            verleihsystem.createItem(patrick,"Name1","Adresse","plz","Ort",new Date(),new Date(), Kategorie.GEGENSTAND);
-            verleihsystem.createItem(patrick,"Name2","Adresse","plz","Ort",new Date(),new Date(), Kategorie.GEGENSTAND);
-            verleihsystem.createItem(patrick,"Name3","Adresse","plz","Ort",new Date(),new Date(), Kategorie.GEGENSTAND);
-            verleihsystem.createItem(patrick,"Name4","Adresse","plz","Ort",new Date(),new Date(), Kategorie.GEGENSTAND);
-            verleihsystem.createItem(patrick,"Name5","Adresse","plz","Ort",new Date(),new Date(), Kategorie.GEGENSTAND);
-            verleihsystem.createItem(patrick,"Name6","Adresse","plz","Ort",new Date(),new Date(), Kategorie.GEGENSTAND);
-            verleihsystem.createItem(patrick,"Name7","Adresse","plz","Ort",new Date(),new Date(), Kategorie.GEGENSTAND);
-            verleihsystem.createItem(patrick,"Name8","Adresse","plz","Ort",new Date(),new Date(), Kategorie.GEGENSTAND);
-            verleihsystem.createItem(patrick,"Name9","Adresse","plz","Ort",new Date(),new Date(), Kategorie.GEGENSTAND);
-            verleihsystem.createItem(patrick,"Name10","Adresse","plz","Ort",new Date(),new Date(), Kategorie.GEGENSTAND);
+            verleihsystem.createItem(patrick,"Taschenrechner","Wölzing 95","9433","St.Andrä",new Date(),new Date(), Kategorie.GEGENSTAND);
+            verleihsystem.createItem(patrick,"Bleistift","Wölzing 95","9433","St.Andrä",new Date(),new Date(), Kategorie.GEGENSTAND);
+            verleihsystem.createItem(patrick,"Kugelschreiber","Wölzing 95","9433","St.Andrä",new Date(),new Date(), Kategorie.GEGENSTAND);
+            verleihsystem.createItem(stefan,"Name3","Adresse","plz","Ort",new Date(),new Date(), Kategorie.GEGENSTAND);
+            verleihsystem.createItem(stefan,"Name4","Adresse","plz","Ort",new Date(),new Date(), Kategorie.GEGENSTAND);
+            verleihsystem.createItem(stefan,"Name5","Adresse","plz","Ort",new Date(),new Date(), Kategorie.GEGENSTAND);
+            verleihsystem.createItem(emanuel,"Name6","Adresse","plz","Ort",new Date(),new Date(), Kategorie.GEGENSTAND);
+            verleihsystem.createItem(emanuel,"Name7","Adresse","plz","Ort",new Date(),new Date(), Kategorie.GEGENSTAND);
+            verleihsystem.createItem(emanuel,"Name8","Adresse","plz","Ort",new Date(),new Date(), Kategorie.GEGENSTAND);
+            verleihsystem.createItem(christian,"Name9","Adresse","plz","Ort",new Date(),new Date(), Kategorie.GEGENSTAND);
+            verleihsystem.createItem(christian,"Name10","Adresse","plz","Ort",new Date(),new Date(), Kategorie.GEGENSTAND);
 
 
 

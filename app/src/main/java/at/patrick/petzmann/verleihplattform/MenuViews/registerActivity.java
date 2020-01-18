@@ -49,13 +49,14 @@ public class registerActivity extends AppCompatActivity {
         String plz = plzTextView.getText().toString();
         String ort = ortTextView.getText().toString();
         String password = passwortTextView.getText().toString();
-        String passwordMatches = passwort2Textview.getText().toString();
+        String password2 = passwort2Textview.getText().toString();
 
         boolean passwordRegex = Methods.PASSWORD_PATTERN(password);
-        boolean everythingEntered = Methods.FILLED_REGISTER(vorname, nachname, username, adresse, plz, ort, password, passwordMatches);
+        boolean everythingEntered = Methods.FILLED_REGISTER(vorname, nachname, username, adresse, plz, ort, password, password2);
+        boolean passwordMatches = password.equals(password2);
 
 
-        if (everythingEntered && password.equals(passwordMatches) && passwordRegex) {
+        if (everythingEntered && passwordMatches && passwordRegex) {
             Toast message = Toast.makeText(getApplicationContext(), "Account erfolgreich registriert!", Toast.LENGTH_SHORT);
             message.show();
 
@@ -66,7 +67,7 @@ public class registerActivity extends AppCompatActivity {
         } else if (!passwordRegex) {
             Toast message = Toast.makeText(getApplicationContext(), "Passwort soll mindestens 8 Zeichen, 1 Groß/Kleinbuchstaben, 1 Zahl und 1 Sonderzeichen enthalten!", Toast.LENGTH_SHORT);
             message.show();
-        } else if (password!=passwordMatches) {
+        } else if (!passwordMatches) {
             Toast message = Toast.makeText(getApplicationContext(), "Passwörter stimmen nicht überein!", Toast.LENGTH_SHORT);
             message.show();
         } else {

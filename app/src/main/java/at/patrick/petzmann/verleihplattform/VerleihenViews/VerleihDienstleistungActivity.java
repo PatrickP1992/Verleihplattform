@@ -89,7 +89,7 @@ public class VerleihDienstleistungActivity extends AppCompatActivity {
             }
         } else dateIsTrue = false;
 
-        boolean rightDate = (vonDatum.getTime() >= Methods.dateToday().getTime() && vonDatum.getTime() < bisDatum.getTime());
+        boolean rightDate = (vonDatum.getTime() >= Methods.dateToday().getTime() && vonDatum.getTime() <= bisDatum.getTime());
 
         intent.putExtra("name", name);
         if (!name.isEmpty() && !adresse.isEmpty() && !plz.isEmpty() && !ort.isEmpty() && dateIsTrue && rightDate) {

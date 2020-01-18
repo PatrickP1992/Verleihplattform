@@ -32,7 +32,8 @@
             app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="16dp"
             android:hint="@string/editText_VGegenstandAdresse"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.503"
-            android:layout_marginStart="16dp"/>
+            android:layout_marginStart="16dp"
+            android:imeOptions="actionNext"/>
     <EditText
             android:layout_width="80dp"
             android:layout_height="50dp"

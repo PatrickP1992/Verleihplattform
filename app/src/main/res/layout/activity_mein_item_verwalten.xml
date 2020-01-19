@@ -25,35 +25,40 @@
             android:text="@string/editText_PLZVDienst"
             android:textAlignment="viewStart"
             android:textSize="30sp"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:layout_editor_absoluteX="80dp" />
+            app:layout_constraintEnd_toStartOf="@+id/textViewMeinItemOrt"
+            app:layout_constraintHorizontal_bias="0.808"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/textViewMeinItemOrt"
             android:layout_width="149dp"
             android:layout_height="41dp"
             android:layout_marginTop="208dp"
+            android:layout_marginEnd="80dp"
             android:completionHint="Select an Item"
             android:completionThreshold="1"
             android:gravity="center"
             android:text="@string/VDienstOrtAutoTextView"
             android:textAlignment="viewStart"
             android:textSize="30sp"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:layout_editor_absoluteX="180dp" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/textViewMeinItemAdresse"
             android:layout_width="250dp"
             android:layout_height="0dp"
+            android:layout_marginTop="128dp"
             android:completionHint="Select an Item"
             android:completionThreshold="1"
             android:gravity="center"
             android:text="@string/editText_AdresseVDienst"
             android:textAlignment="textStart"
             android:textSize="30sp"
-            tools:layout_editor_absoluteX="80dp"
-            tools:layout_editor_absoluteY="124dp" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <TextView
@@ -103,7 +108,7 @@
         android:completionHint="Select an Item"
         android:completionThreshold="1"
         android:gravity="center"
-        android:text="@string/editText_VDienstDatumBis"
+        android:text="Zeitraum bis"
         android:textAlignment="viewStart"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"

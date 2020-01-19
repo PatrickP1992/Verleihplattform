@@ -67,24 +67,30 @@
         <EditText
                 android:layout_width="250dp"
                 android:layout_height="50dp"
-                android:inputType="date|number"
+                android:inputType="numberDecimal"
+                android:digits="0123456789."
                 android:ems="10"
                 android:id="@+id/editText_VGegenstandDatumVon" android:hint="@string/editText_VDienstDatumVon"
                 android:layout_marginTop="30dp" app:layout_constraintTop_toBottomOf="@+id/editText_VGegenstandPLZ"
                 app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
                 android:layout_marginEnd="16dp" android:textSize="23sp"
-                android:layout_marginStart="16dp"/>
+                android:layout_marginStart="16dp"
+                android:imeOptions="actionNext"/>
         <EditText
                 android:layout_width="250dp"
                 android:layout_height="50dp"
-                android:inputType="date|number"
+                android:inputType="numberDecimal"
+                android:digits="0123456789."
                 android:ems="10"
-                android:id="@+id/editText_VGegenstandDatumBis" android:layout_marginTop="30dp"
+                android:id="@+id/editText_VGegenstandDatumBis"
+                android:layout_marginTop="30dp"
                 app:layout_constraintTop_toBottomOf="@+id/editText_VGegenstandDatumVon"
-                app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="16dp"
                 app:layout_constraintStart_toStartOf="parent"
                 android:hint="@string/editText_VDienstDatumBis" android:textSize="23sp"
-                android:layout_marginStart="16dp"/>
+                android:layout_marginStart="16dp"
+                android:imeOptions="actionNext"/>
         <Button
                 android:text="@string/button_submitDienstleistung"
                 android:layout_width="wrap_content"
@@ -93,8 +99,11 @@
                 android:layout_marginTop="50dp"
                 app:layout_constraintTop_toBottomOf="@+id/editText_VGegenstandDatumBis"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.78"
-                android:onClick="angebotErstellt" android:layout_marginEnd="16dp" android:layout_marginStart="16dp"/>
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.78"
+                android:onClick="angebotErstellt"
+                android:layout_marginEnd="16dp"
+                android:layout_marginStart="16dp"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

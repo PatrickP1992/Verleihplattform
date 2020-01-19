@@ -3,6 +3,7 @@ package at.patrick.petzmann.verleihplattform.AusleihenViews;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -36,26 +37,24 @@ public class AusleihenGegenstandActivity extends AppCompatActivity {
 
         filterText = findViewById(R.id.ausleihenGegenstandTextView);
 
-        verleihsystem.setCurrentFilterAusleihen(filterText,verleihsystem.getActiveUser(),  Kategorie.GEGENSTAND);
+        verleihsystem.setCurrentFilterAusleihen(filterText, verleihsystem.getActiveUser(), Kategorie.GEGENSTAND);
 
 
-
-        if (verleihsystem.getFilterReturnItemId().length != 0)
-        {
+        if (verleihsystem.getFilterReturnItemId().length != 0) {
             myListView = findViewById(R.id.listViewGegenstand);
-            final ItemAdapter myAdapter = new ItemAdapter(this,verleihsystem.getFilterReturnItemId(),verleihsystem.getFilterReturnNames(),verleihsystem.getFilterReturnPictureRes());
+            final ItemAdapter myAdapter = new ItemAdapter(this, verleihsystem.getFilterReturnItemId(), verleihsystem.getFilterReturnNames(), verleihsystem.getFilterReturnPictureRes());
             myListView.setAdapter(myAdapter);
 
             myListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                    Intent myIntent = new Intent(AusleihenGegenstandActivity.this,WillAusleihenActivity.class);
-                    int[]ids = verleihsystem.getFilterReturnItemId();
+                    Intent myIntent = new Intent(AusleihenGegenstandActivity.this, WillAusleihenActivity.class);
+                    int[] ids = verleihsystem.getFilterReturnItemId();
                     myIntent.putExtra("itemId", ids[position]);
                     Verleihsystem.setVerleihsystem(verleihsystem); // verleihsystem wird gespeichert
 
                     if (ids[position] != 0)
-                    startActivity(myIntent);
+                        startActivity(myIntent);
                 }
             });
         }
@@ -73,7 +72,7 @@ public class AusleihenGegenstandActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         Intent intent;
-        switch(item.getItemId()){
+        switch (item.getItemId()) {
             case R.id.home:
                 intent = new Intent(this, VerleihenAusleihenActivity.class);
                 startActivity(intent);
@@ -95,11 +94,12 @@ public class AusleihenGegenstandActivity extends AppCompatActivity {
                 return true;
 
             case R.id.impressum:
-                intent = new Intent(this , impressumActivity.class);
+                intent = new Intent(this, impressumActivity.class);
                 startActivity(intent);
                 return true;
 
-            default:  return super.onOptionsItemSelected(item);
+            default:
+                return super.onOptionsItemSelected(item);
         }
     }
 }

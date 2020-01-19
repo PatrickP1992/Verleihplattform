@@ -49,8 +49,8 @@ public class WillAusleihenActivity extends AppCompatActivity {
         {
             int i = myBundle.getInt("itemId");
             String s = Integer.toString(i);
-            message = Toast.makeText(getApplicationContext(),s, Toast.LENGTH_SHORT);
-            message.show();
+            /*message = Toast.makeText(getApplicationContext(), s, Toast.LENGTH_SHORT);
+            message.show();*/
 
             toShow = verleihsystem.returnItemById(i);
             showItem();
@@ -76,6 +76,9 @@ public class WillAusleihenActivity extends AppCompatActivity {
             Toast message2 = Toast.makeText(getApplicationContext(), "Anfrage erstellt und ein Punkt wurde abgezogen", Toast.LENGTH_SHORT);
             message2.show();
 
+        } else {
+            Toast message = Toast.makeText(getApplicationContext(), "Sie haben nicht genügend Punkte zum ausleihen!", Toast.LENGTH_SHORT);
+            message.show();
         }
 
 

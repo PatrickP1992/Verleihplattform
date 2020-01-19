@@ -3,6 +3,7 @@ package at.patrick.petzmann.verleihplattform.AusleihenViews;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -28,6 +29,7 @@ public class AusleihenDienstleistungActivity extends AppCompatActivity {
     public Verleihsystem verleihsystem = Verleihsystem.getVerleihsystem();
     public ListView myListView;
     public TextView filterText;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -36,20 +38,19 @@ public class AusleihenDienstleistungActivity extends AppCompatActivity {
 
         filterText = findViewById(R.id.ausleihenDienstleistungTextView);
 
-        verleihsystem.setCurrentFilterAusleihen(filterText,verleihsystem.getActiveUser(),  Kategorie.DIENSTLEISTUNG);
+        verleihsystem.setCurrentFilterAusleihen(filterText, verleihsystem.getActiveUser(), Kategorie.DIENSTLEISTUNG);
 
         // Wird nur ausgeführt wenn etwas gefunden wurde
-        if (verleihsystem.getFilterReturnItemId().length != 0)
-        {
+        if (verleihsystem.getFilterReturnItemId().length != 0) {
             myListView = findViewById(R.id.listViewDienstleistungen);
-            final ItemAdapter myAdapter = new ItemAdapter(this,verleihsystem.getFilterReturnItemId(),verleihsystem.getFilterReturnNames(),verleihsystem.getFilterReturnPictureRes());
+            final ItemAdapter myAdapter = new ItemAdapter(this, verleihsystem.getFilterReturnItemId(), verleihsystem.getFilterReturnNames(), verleihsystem.getFilterReturnPictureRes());
             myListView.setAdapter(myAdapter);
 
             myListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                    Intent myIntent = new Intent(AusleihenDienstleistungActivity.this,WillAusleihenActivity.class);
-                    int[]ids = verleihsystem.getFilterReturnItemId();
+                    Intent myIntent = new Intent(AusleihenDienstleistungActivity.this, WillAusleihenActivity.class);
+                    int[] ids = verleihsystem.getFilterReturnItemId();
                     myIntent.putExtra("itemId", ids[position]);
                     Verleihsystem.setVerleihsystem(verleihsystem); // verleihsystem wird gespeichert
                     startActivity(myIntent);
@@ -69,7 +70,7 @@ public class AusleihenDienstleistungActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         Intent intent;
-        switch(item.getItemId()){
+        switch (item.getItemId()) {
             case R.id.home:
                 intent = new Intent(this, VerleihenAusleihenActivity.class);
                 startActivity(intent);
@@ -91,11 +92,12 @@ public class AusleihenDienstleistungActivity extends AppCompatActivity {
                 return true;
 
             case R.id.impressum:
-                intent = new Intent(this , impressumActivity.class);
+                intent = new Intent(this, impressumActivity.class);
                 startActivity(intent);
                 return true;
 
-            default:  return super.onOptionsItemSelected(item);
+            default:
+                return super.onOptionsItemSelected(item);
         }
     }
 

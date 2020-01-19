@@ -18,7 +18,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" android:textSize="36sp"
-            app:layout_constraintBottom_toTopOf="@+id/listVonMirAusgeliehen" android:layout_marginBottom="16dp"/>
+            app:layout_constraintBottom_toTopOf="@+id/listVonMirAusgeliehen" android:layout_marginBottom="32dp"/>
 
     <ListView
             android:id="@+id/listVonMirAusgeliehen"
@@ -27,6 +27,6 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" app:layout_constraintVertical_bias="1.0"/>
+            app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="100dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

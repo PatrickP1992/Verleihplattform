@@ -12,6 +12,7 @@ import android.os.Bundle;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import at.patrick.petzmann.verleihplattform.Klassen.Other.Methods;
 import at.patrick.petzmann.verleihplattform.Klassen.System.Item;
 import at.patrick.petzmann.verleihplattform.Klassen.System.Verleihsystem;
 import at.patrick.petzmann.verleihplattform.MenuViews.AGBsActivity;
@@ -64,6 +65,8 @@ public class WillAusleihenActivity extends AppCompatActivity {
         adresse.setText(toShow.getAdresse());
         plz.setText(toShow.getPlz());
         ort.setText(toShow.getOrt());
+        von.setText(Methods.dateToString(toShow.getVonDatum()));
+        bis.setText(Methods.dateToString(toShow.getBisDatum()));
     }
 
     public void ausleihenItem(View view){

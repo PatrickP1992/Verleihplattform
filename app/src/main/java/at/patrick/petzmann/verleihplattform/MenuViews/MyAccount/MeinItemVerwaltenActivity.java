@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import at.patrick.petzmann.verleihplattform.Klassen.Other.Methods;
 import at.patrick.petzmann.verleihplattform.Klassen.System.Item;
 import at.patrick.petzmann.verleihplattform.Klassen.System.Verleihsystem;
 import at.patrick.petzmann.verleihplattform.MenuViews.MyAccountActivity;
@@ -40,6 +41,7 @@ public class MeinItemVerwaltenActivity extends AppCompatActivity {
         von = findViewById(R.id.textViewMeinItemVon);
         bis = findViewById(R.id.textViewMeinItemBis);
 
+
         Bundle myBundle = getIntent().getExtras();
         if (myBundle!=null)
         {
@@ -61,6 +63,9 @@ public class MeinItemVerwaltenActivity extends AppCompatActivity {
         adresse.setText(toShow.getAdresse());
         plz.setText(toShow.getPlz());
         ort.setText(toShow.getOrt());
+        von.setText(Methods.dateToString(toShow.getVonDatum()));
+        bis.setText(Methods.dateToString(toShow.getBisDatum()));
+
     }
 
 

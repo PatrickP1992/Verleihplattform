@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import at.patrick.petzmann.verleihplattform.Klassen.Other.Methods;
 import at.patrick.petzmann.verleihplattform.Klassen.System.Item;
 import at.patrick.petzmann.verleihplattform.Klassen.System.Verleihsystem;
 import at.patrick.petzmann.verleihplattform.MenuViews.MyAccountActivity;
@@ -39,6 +40,7 @@ public class ZurueckgebenActivity extends AppCompatActivity {
         von = findViewById(R.id.textViewZurueckgebenVon);
         bis = findViewById(R.id.textViewZurueckgebenBis);
 
+
         Bundle myBundle = getIntent().getExtras();
         if (myBundle!=null)
         {
@@ -60,6 +62,8 @@ public class ZurueckgebenActivity extends AppCompatActivity {
         adresse.setText(toShow.getAdresse());
         plz.setText(toShow.getPlz());
         ort.setText(toShow.getOrt());
+        von.setText(Methods.dateToString(toShow.getVonDatum()));
+        bis.setText(Methods.dateToString(toShow.getBisDatum()));
     }
 
 

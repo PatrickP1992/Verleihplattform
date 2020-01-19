@@ -49,5 +49,12 @@ public class Methods {
         } else return true;
     }
 
+    public static String dateToString(Date date){
+        java.text.SimpleDateFormat format = new java.text.SimpleDateFormat("dd.MM.yyyy");
+
+        String ausgabe = format.format(date);
+
+        return ausgabe;
+    }
 
 }

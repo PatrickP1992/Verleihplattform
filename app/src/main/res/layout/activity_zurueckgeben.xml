@@ -30,7 +30,7 @@
         android:layout_width="250dp"
         android:layout_height="0dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="104dp"
+        android:layout_marginTop="128dp"
         android:layout_marginEnd="16dp"
         android:completionHint="Select an Item"
         android:completionThreshold="1"
@@ -48,7 +48,6 @@
         android:layout_width="72dp"
         android:layout_height="43dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="208dp"
         android:layout_marginEnd="16dp"
         android:completionHint="Select an Item"
         android:completionThreshold="1"
@@ -56,17 +55,17 @@
         android:text="@string/editText_PLZVDienst"
         android:textAlignment="viewStart"
         android:textSize="30sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/textViewZurueckgebenOrt"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.208"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textViewZurueckgebenOrt"
         android:layout_width="148dp"
         android:layout_height="42dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="208dp"
+        android:layout_marginTop="220dp"
         android:layout_marginEnd="16dp"
         android:completionHint="Select an Item"
         android:completionThreshold="1"

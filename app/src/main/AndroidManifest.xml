@@ -14,15 +14,63 @@
             android:theme="@style/AppTheme">
         <activity android:name=".MenuViews.registerActivity">
         </activity>
-        <activity android:name=".MenuViews.MyAccount.ZurueckgebenActivity"/>
-        <activity android:name=".MenuViews.MyAccount.MeinItemVerwaltenActivity"/>
-        <activity android:name=".MenuViews.MyAccount.MeineItemsActivity"/>
-        <activity android:name=".MenuViews.MyAccount.VonMirAusgeliehenActivity"/>
+        <activity android:name=".MenuViews.MyAccount.ZurueckgebenActivity"
+        android:parentActivityName=".MenuViews.MyAccount.VonMirAusgeliehenActivity">
+        <!-- The meta-data tag is required if you support API level 15 and lower -->
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value=".MenuViews.MyAccount.VonMirAusgeliehenActivity"/>
+        </activity>
+
+
+
+
+        <activity android:name=".MenuViews.MyAccount.MeinItemVerwaltenActivity"
+        android:parentActivityName=".MenuViews.MyAccount.MeineItemsActivity">
+        <!-- The meta-data tag is required if you support API level 15 and lower -->
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value=".MenuViews.MyAccount.MeineItemsActivity"/>
+        </activity>
+
+        <activity android:name=".MenuViews.MyAccount.MeineItemsActivity"
+        android:parentActivityName=".MenuViews.MyAccountActivity">
+        <!-- The meta-data tag is required if you support API level 15 and lower -->
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value=".MenuViews.MyAccountActivity"/>
+        </activity>
+
+        <activity android:name=".MenuViews.MyAccount.VonMirAusgeliehenActivity"
+        android:parentActivityName=".MenuViews.MyAccountActivity">
+        <!-- The meta-data tag is required if you support API level 15 and lower -->
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value=".MenuViews.MyAccountActivity"/>
+        </activity>
+
+
         <activity android:name=".MenuViews.impressumActivity"/>
         <activity android:name=".MenuViews.NachrichtenActivity"/>
         <activity android:name=".MenuViews.AGBsActivity"/>
-        <activity android:name=".MenuViews.MyAccountActivity"/>
-        <activity android:name=".AusleihenViews.WillAusleihenActivity"/>
+
+        <activity android:name=".MenuViews.MyAccountActivity"
+            android:parentActivityName=".VerleihenAusleihenActivity">
+        <!-- The meta-data tag is required if you support API level 15 and lower -->
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value=".VerleihenAusleihenActivity"/>
+        </activity>
+
+        <activity android:name=".AusleihenViews.WillAusleihenActivity"
+            android:parentActivityName=".VerleihenAusleihenActivity">
+            <!-- The meta-data tag is required if you support API level 15 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".VerleihenAusleihenActivity"/>
+        </activity>
+
+
         <activity android:name=".VerleihenViews.AngebotErstelltActivity"/>
         <activity
                 android:name=".AusleihenViews.AusleihenDienstleistungActivity"

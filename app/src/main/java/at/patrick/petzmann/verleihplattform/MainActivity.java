@@ -118,32 +118,28 @@ public class MainActivity extends AppCompatActivity {
 
 
             //----Dienstleistungen hinzufügen----------------------------------------------------------------------
-            verleihsystem.createItem(patrick,"Nachhilfe in Mathe","Wölzing 95","9433","St.Andrä",new Date(),new Date(), Kategorie.DIENSTLEISTUNG);
-            verleihsystem.createItem(patrick,"Babysitten","Wölzing 95","9433","St.Andrä",new Date(),new Date(), Kategorie.DIENSTLEISTUNG);
-            verleihsystem.createItem(patrick,"Nachhilfe in Informatik","Wölzing 95","9433","St.Andrä",new Date(),new Date(), Kategorie.DIENSTLEISTUNG);
-            verleihsystem.createItem(stefan,"Name","Adresse","plz","Ort",new Date(),new Date(), Kategorie.DIENSTLEISTUNG);
-            verleihsystem.createItem(stefan,"Name","Adresse","plz","Ort",new Date(),new Date(), Kategorie.DIENSTLEISTUNG);
-            verleihsystem.createItem(stefan,"Name","Adresse","plz","Ort",new Date(),new Date(), Kategorie.DIENSTLEISTUNG);
-            verleihsystem.createItem(emanuel,"Name","Adresse","plz","Ort",new Date(),new Date(), Kategorie.DIENSTLEISTUNG);
-            verleihsystem.createItem(emanuel,"Name","Adresse","plz","Ort",new Date(),new Date(), Kategorie.DIENSTLEISTUNG);
-            verleihsystem.createItem(emanuel,"Name","Adresse","plz","Ort",new Date(),new Date(), Kategorie.DIENSTLEISTUNG);
-            verleihsystem.createItem(christian,"Name","Adresse","plz","Ort",new Date(),new Date(), Kategorie.DIENSTLEISTUNG);
-            verleihsystem.createItem(christian,"Name","Adresse","plz","Ort",new Date(),new Date(), Kategorie.DIENSTLEISTUNG);
-            verleihsystem.createItem(christian,"Name","Adresse","plz","Ort",new Date(),new Date(), Kategorie.DIENSTLEISTUNG);
+            verleihsystem.createItem(patrick,"Nachhilfe in Mathe","Klagenfurt Uni","9020","Klagenfurt",new Date(),new Date(), Kategorie.DIENSTLEISTUNG);
+            verleihsystem.createItem(patrick,"Babysitten","Klagenfurt","9020","Klagenfurt",new Date(),new Date(), Kategorie.DIENSTLEISTUNG);
+            verleihsystem.createItem(emanuel,"Nachhilfe in Informatik","Wölzing 95","9020","Klagenfurt",new Date(),new Date(), Kategorie.DIENSTLEISTUNG);
+            verleihsystem.createItem(stefan,"Haare schneiden","Klagenfurt Uni","9020","Klagenfurt",new Date(),new Date(), Kategorie.DIENSTLEISTUNG);
+            verleihsystem.createItem(christian,"Nachhilfe in Deutsch","Klagenfurt Uni","9020","Klagenfurt",new Date(),new Date(), Kategorie.DIENSTLEISTUNG);
+            verleihsystem.createItem(stefan,"Nachhilfe in Buchhaltung","Klagenfurt Uni","9020","Klagenfurt",new Date(),new Date(), Kategorie.DIENSTLEISTUNG);
+            verleihsystem.createItem(emanuel,"Umzugshilfe","Klagenfurt Uni","9020","Klagenfurt",new Date(),new Date(), Kategorie.DIENSTLEISTUNG);
+            verleihsystem.createItem(emanuel,"Nachhilfe in Mathe","Klagenfurt Uni","9020","Klagenfurt",new Date(),new Date(), Kategorie.DIENSTLEISTUNG);
 
 
             //----Gegenstände hinzufügen----------------------------------------------------------------------------
-            verleihsystem.createItem(patrick,"Taschenrechner","Wölzing 95","9433","St.Andrä",new Date(),new Date(), Kategorie.GEGENSTAND);
-            verleihsystem.createItem(patrick,"Bleistift","Wölzing 95","9433","St.Andrä",new Date(),new Date(), Kategorie.GEGENSTAND);
-            verleihsystem.createItem(patrick,"Kugelschreiber","Wölzing 95","9433","St.Andrä",new Date(),new Date(), Kategorie.GEGENSTAND);
-            verleihsystem.createItem(stefan,"Name3","Adresse","plz","Ort",new Date(),new Date(), Kategorie.GEGENSTAND);
-            verleihsystem.createItem(stefan,"Name4","Adresse","plz","Ort",new Date(),new Date(), Kategorie.GEGENSTAND);
-            verleihsystem.createItem(stefan,"Name5","Adresse","plz","Ort",new Date(),new Date(), Kategorie.GEGENSTAND);
-            verleihsystem.createItem(emanuel,"Name6","Adresse","plz","Ort",new Date(),new Date(), Kategorie.GEGENSTAND);
-            verleihsystem.createItem(emanuel,"Name7","Adresse","plz","Ort",new Date(),new Date(), Kategorie.GEGENSTAND);
-            verleihsystem.createItem(emanuel,"Name8","Adresse","plz","Ort",new Date(),new Date(), Kategorie.GEGENSTAND);
-            verleihsystem.createItem(christian,"Name9","Adresse","plz","Ort",new Date(),new Date(), Kategorie.GEGENSTAND);
-            verleihsystem.createItem(christian,"Name10","Adresse","plz","Ort",new Date(),new Date(), Kategorie.GEGENSTAND);
+            verleihsystem.createItem(patrick,"Taschenrechner","Klagenfurt Uni","9020","Klagenfurt",new Date(),new Date(), Kategorie.GEGENSTAND);
+            verleihsystem.createItem(patrick,"Bleistift","Klagenfurt Uni","9020","Klagenfurt",new Date(),new Date(), Kategorie.GEGENSTAND);
+            verleihsystem.createItem(patrick,"Kugelschreiber","Klagenfurt Uni","9020","Klagenfurt",new Date(),new Date(), Kategorie.GEGENSTAND);
+            verleihsystem.createItem(stefan,"Hammer","Klagenfurt Uni","9020","Klagenfurt",new Date(),new Date(), Kategorie.GEGENSTAND);
+            verleihsystem.createItem(stefan,"Bohrmaschine","Klagenfurt Uni","9020","Klagenfurt",new Date(),new Date(), Kategorie.GEGENSTAND);
+            verleihsystem.createItem(stefan,"Lineal","Klagenfurt Uni","9020","Klagenfurt",new Date(),new Date(), Kategorie.GEGENSTAND);
+            verleihsystem.createItem(emanuel,"Geodreieck","Klagenfurt Uni","9020","Klagenfurt",new Date(),new Date(), Kategorie.GEGENSTAND);
+            verleihsystem.createItem(emanuel,"Zirkel","Klagenfurt Uni","9020","Klagenfurt",new Date(),new Date(), Kategorie.GEGENSTAND);
+            verleihsystem.createItem(emanuel,"Kugelschreiber","Klagenfurt Uni","9020","Klagenfurt",new Date(),new Date(), Kategorie.GEGENSTAND);
+            verleihsystem.createItem(christian,"Radiergummi","Klagenfurt Uni","9020","Klagenfurt",new Date(),new Date(), Kategorie.GEGENSTAND);
+            verleihsystem.createItem(christian,"Fahrrad","Klagenfurt Uni","9020","Klagenfurt",new Date(),new Date(), Kategorie.GEGENSTAND);
 
 
 

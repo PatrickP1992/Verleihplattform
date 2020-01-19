@@ -1,5 +1,7 @@
 package at.patrick.petzmann.verleihplattform.AusleihenViews;
 
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;

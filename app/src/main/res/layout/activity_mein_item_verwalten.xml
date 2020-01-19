@@ -18,27 +18,42 @@
             android:id="@+id/textViewMeinItemPlz"
             android:layout_width="83dp"
             android:layout_height="42dp"
+            android:layout_marginTop="208dp"
             android:completionHint="Select an Item"
             android:completionThreshold="1"
             android:gravity="center"
             android:text="@string/editText_PLZVDienst"
             android:textAlignment="viewStart"
             android:textSize="30sp"
-            tools:layout_editor_absoluteX="80dp"
-            tools:layout_editor_absoluteY="211dp" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteX="80dp" />
 
         <TextView
             android:id="@+id/textViewMeinItemOrt"
             android:layout_width="149dp"
             android:layout_height="41dp"
+            android:layout_marginTop="208dp"
             android:completionHint="Select an Item"
             android:completionThreshold="1"
             android:gravity="center"
             android:text="@string/VDienstOrtAutoTextView"
             android:textAlignment="viewStart"
             android:textSize="30sp"
-            tools:layout_editor_absoluteX="180dp"
-            tools:layout_editor_absoluteY="211dp" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteX="180dp" />
+
+        <TextView
+            android:id="@+id/textViewMeinItemAdresse"
+            android:layout_width="250dp"
+            android:layout_height="0dp"
+            android:completionHint="Select an Item"
+            android:completionThreshold="1"
+            android:gravity="center"
+            android:text="@string/editText_AdresseVDienst"
+            android:textAlignment="textStart"
+            android:textSize="30sp"
+            tools:layout_editor_absoluteX="80dp"
+            tools:layout_editor_absoluteY="124dp" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <TextView
@@ -53,24 +68,6 @@
         android:editable="false"
         android:gravity="center"
         android:text="Name"
-        android:textAlignment="textStart"
-        android:textSize="30sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textViewMeinItemAdresse"
-        android:layout_width="250dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="104dp"
-        android:layout_marginEnd="16dp"
-        android:completionHint="Select an Item"
-        android:completionThreshold="1"
-        android:gravity="center"
-        android:text="@string/editText_AdresseVDienst"
         android:textAlignment="textStart"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"

@@ -84,6 +84,7 @@ public class WillAusleihenActivity extends AppCompatActivity {
 
 
 
+
         Verleihsystem.setVerleihsystem(verleihsystem); // verleihsystem wird gespeichert
 
         Intent intent = new Intent(this, VerleihenAusleihenActivity.class);

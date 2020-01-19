@@ -30,7 +30,7 @@ public class AngebotErstelltActivity extends AppCompatActivity {
 
         if (b != null) {
             String name = (String) b.get("name");
-            erstellt.setText("Das Angebot über " + name + " wurde erstellt");
+            erstellt.setText("Das Angebot über " + name + " wurde erstellt und 5 Ausleihpunkte wurden hinzugefügt");
 
         }
     }
